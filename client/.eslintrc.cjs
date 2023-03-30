@@ -14,7 +14,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
     project: ['./tsconfig.json'],
-    tsconfigRootDir: 'C:/Users/aishw/OneDrive/Desktop/E-commerce/client'
+    tsconfigRootDir: 'client'
   },
   plugins: ['react'],
   rules: {
