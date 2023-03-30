@@ -1,10 +1,9 @@
 import React from 'react'
-import './App.scss'
+import './App.module.scss'
+import Layout from './components/Layout/Layout'
 
-function App() {
-  return (
-    <h1>Hello World</h1>
-  )
+const App: React.FC = () => {
+  return <Layout>Hello World</Layout>
 }
 
 export default App
