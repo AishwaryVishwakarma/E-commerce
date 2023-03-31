@@ -1,20 +1,14 @@
 import React from 'react'
 import Navbar from '../Navbar/Navbar'
-import { type Theme } from '../../model'
-interface BasicProps extends Theme {
+interface BasicProps {
   children: React.ReactNode
   nav?: boolean
 }
 
-const Layout: React.FC<BasicProps> = ({
-  children,
-  nav = true,
-  theme = 'light',
-  setTheme
-}) => {
+const Layout: React.FC<BasicProps> = ({ children, nav = true }) => {
   return (
     <div>
-      {nav && <Navbar theme={theme} setTheme={setTheme} />}
+      {nav && <Navbar />}
       <p>This is a layout</p>
       {children}
     </div>

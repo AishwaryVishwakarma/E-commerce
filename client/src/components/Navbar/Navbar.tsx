@@ -1,8 +1,10 @@
 import React from 'react'
-import { type Theme } from '../../model'
 import styles from './Navbar.module.scss'
+import { ThemeContext } from '../../App'
 
-const Navbar: React.FC<Theme> = ({ theme, setTheme }) => {
+const Navbar: React.FC = () => {
+  const themectx = React.useContext(ThemeContext)
+
   return (
     <nav className={styles.navbar}>
       <h1 className={styles.navHeading}>React</h1>
