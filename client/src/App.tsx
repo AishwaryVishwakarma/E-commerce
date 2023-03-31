@@ -1,9 +1,11 @@
 import React from 'react'
 import './App.module.scss'
-import Layout from './components/Layout/Layout'
+import Home from './pages/home/index'
 
 const App: React.FC = () => {
-  return <Layout>Hello World</Layout>
+  const [theme, setTheme] = React.useState('light')
+
+  return <Home changeTheme={{ theme, setTheme }} />
 }
 
 export default App
