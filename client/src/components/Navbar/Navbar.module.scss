@@ -1,11 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
 
 .navbar {
-  background: linear-gradient(
-    90deg,
-    rgb(110, 94, 254) 0%,
-    rgba(73, 63, 252, 1) 100%
-  );
   display: flex;
   align-items: center;
   padding: 20px 20px 20px 50px;
@@ -29,13 +24,12 @@
 
     & > li {
       font-size: 18px;
-      color: white;
+
       padding: 10px;
       min-width: 100px;
       text-align: center;
 
       &:hover {
-        background-color: #6d76f7;
         border-radius: 10px;
         transition: all 0.2s ease-in-out;
       }
@@ -46,8 +40,7 @@
     font-size: 18px;
     padding: 8px 20px;
     border: none;
-    color: #2b38e9;
-    background: #ffffff;
+    
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.26);
     cursor: pointer;
     border-radius: 10px;
@@ -80,7 +73,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: #ffffff;
+      background: #2C3333;
       transition: 0.3s;
       border-radius: 30px;
 
@@ -91,19 +84,53 @@
         width: 20px;
         left: 1px;
         bottom: 2.6px;
-        background-color: #000000;
+        background-color: #ffffff;
         border-radius: 50%;
         transition: 0.3s;
       }
     }
 
     input:checked + span {
-      background-color: #000000;
+      background-color: #ffffff;
     }
 
     input:checked + span:before {
-      background-color: #fff;
+      background-color: #000000;
       transform: translateX(29px);
     }
   }
+}
+
+.light {
+  background: linear-gradient(
+    90deg,
+    rgb(110, 94, 254) 0%,
+    rgba(73, 63, 252, 1) 100%
+  );
+  .navItems {
+    & > li {
+      color: white;
+      &:hover {
+        background-color: #6d76f7;
+      }
+    }
+  }
+  .signInButton{
+    color: #2b38e9;
+    background: #ffffff;
+  }
+}
+
+.dark {
+  background-color: #2C3333;
+  .navItems {
+    & > li {
+      color: #ffffff;
+      &:hover {
+        background-color: #2E4F4F;
+      }
+    }
+  }
+ 
+ 
 }
