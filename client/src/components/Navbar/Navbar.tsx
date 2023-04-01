@@ -4,7 +4,15 @@ import { ThemeContext } from '../../App'
 
 const Navbar: React.FC = () => {
   const { theme, setTheme } = React.useContext(ThemeContext) ?? {}
+  console.log(theme)
 
+  function setThemeHandler () {
+    if (theme === 'light') {
+      setTheme?.('dark')
+    } else if (theme === 'dark') {
+      setTheme?.('light')
+    }
+  }
   return (
     <nav className={styles.navbar}>
       <h1 className={styles.navHeading}>React</h1>
@@ -14,9 +22,14 @@ const Navbar: React.FC = () => {
         <li>Products</li>
         <li>Contact Us</li>
       </ul>
-      <button type="button" className={styles.signInButton}>
+      <button type='button' className={styles.signInButton}>
         Sign-In
       </button>
+      <label>
+        <input type='checkbox' onClick={setThemeHandler} />
+        <span />
+        <strong></strong>
+      </label>
     </nav>
   )
 }
