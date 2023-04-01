@@ -9,7 +9,11 @@ const Navbar: React.FC = () => {
     theme === 'light' ? setTheme?.('dark') : setTheme?.('light')
   }
   return (
-    <nav className={styles.navbar}>
+    <nav
+      className={`${styles.navbar} ${
+        theme === 'light' ? styles.light : styles.dark
+      }`}
+    >
       <h1 className={styles.navHeading}>React</h1>
       <ul className={styles.navItems}>
         <li>Home</li>
