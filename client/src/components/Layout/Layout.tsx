@@ -9,7 +9,6 @@ const Layout: React.FC<EssentialProps> = ({ children, nav = true }) => {
   return (
     <div>
       {nav && <Navbar />}
-      <p>This is a layout</p>
       {children}
     </div>
   )
