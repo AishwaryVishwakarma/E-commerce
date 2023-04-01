@@ -3,7 +3,7 @@ import styles from './Navbar.module.scss'
 import { ThemeContext } from '../../App'
 
 const Navbar: React.FC = () => {
-  const themectx = React.useContext(ThemeContext)
+  const { theme, setTheme } = React.useContext(ThemeContext) ?? {}
 
   return (
     <nav className={styles.navbar}>
@@ -14,8 +14,8 @@ const Navbar: React.FC = () => {
         <li>Products</li>
         <li>Contact Us</li>
       </ul>
-      <button type="button" className={styles.signUpButton}>
-        Sign-Up
+      <button type="button" className={styles.signInButton}>
+        Sign-In
       </button>
     </nav>
   )
