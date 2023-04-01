@@ -60,7 +60,7 @@
     }
   }
 
-  label {
+  .toggleLabel {
     position: relative;
     display: inline-block;
     width: 50px;
@@ -83,21 +83,22 @@
       background: #ffffff;
       transition: 0.3s;
       border-radius: 30px;
+
+      &:before {
+        position: absolute;
+        content: '';
+        height: 20px;
+        width: 20px;
+        left: 1px;
+        bottom: 2.6px;
+        background-color: #000000;
+        border-radius: 50%;
+        transition: 0.3s;
+      }
     }
-    span:before {
-      position: absolute;
-      content: '';
-      height: 20px;
-      width: 20px;
-      left: 1px;
-      bottom: 2.6px;
-      background-color: #000000;
-      border-radius: 50%;
-      transition: 0.3s;
-    }
+
     input:checked + span {
       background-color: #000000;
-      
     }
 
     input:checked + span:before {
