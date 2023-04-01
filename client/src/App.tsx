@@ -1,9 +1,17 @@
 import React from 'react'
-import './App.scss'
+import './App.module.scss'
+import Home from './pages/home/index'
+import { type Theme } from './model'
 
-function App() {
+export const ThemeContext = React.createContext<Theme | undefined>(undefined)
+
+const App: React.FC = () => {
+  const [theme, setTheme] = React.useState('light')
+
   return (
-    <h1>Hello World</h1>
+    <ThemeContext.Provider value={{ theme, setTheme }}>
+      <Home />
+    </ThemeContext.Provider>
   )
 }
 
