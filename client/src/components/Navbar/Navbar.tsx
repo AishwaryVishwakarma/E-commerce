@@ -20,13 +20,12 @@ const Navbar: React.FC = () => {
         <li>Services</li>
         <li>Products</li>
         <li>Contact Us</li>
+        <li>Sign In</li>
       </ul>
-      <button type="button" className={styles.signInButton}>
-        Sign-In
-      </button>
       <label className={styles.toggleLabel}>
-        <input type="checkbox" onClick={setThemeHandler} />
-        <span />
+        <input type="checkbox" onChange={setThemeHandler} />
+        <span className={styles.toggleButton} />
+        <span className={styles.toggleIcons} />
       </label>
     </nav>
   )

@@ -3,17 +3,19 @@
 .navbar {
   display: flex;
   align-items: center;
-  padding: 20px 20px 20px 50px;
-  box-shadow: 0 1px 10px 0px #000000;
+  padding: 10px 20px 10px 50px;
   position: sticky;
   top: 0;
+  z-index: 1;
+  border-bottom: 1px solid #cccccc;
+  margin-bottom: 20px;
 
   .navHeading {
     font-size: 30px;
-    color: #ffffff;
     font-family: 'Lato';
     font-weight: 700;
     letter-spacing: 1px;
+    cursor: pointer;
   }
 
   .navItems {
@@ -22,45 +24,22 @@
     align-items: center;
     list-style: none;
     cursor: pointer;
-    gap: 15px;
+    gap: 10px;
 
     & > li {
       font-size: 18px;
-
       padding: 10px;
-      min-width: 100px;
       text-align: center;
-
-      &:hover {
-        border-radius: 10px;
-        transition: all 0.2s ease-in-out;
-      }
-    }
-  }
-
-  .signInButton {
-    font-size: 18px;
-    padding: 8px 20px;
-    border: none;
-
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.26);
-    cursor: pointer;
-    border-radius: 10px;
-    margin-left: 20px;
-
-    &:hover {
-      box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.26);
-      transform: scale(1.01);
-      transition: all 0.4s ease-in-out;
+      font-weight: 400;
     }
   }
 
   .toggleLabel {
     position: relative;
     display: inline-block;
-    width: 50px;
+    width: 55px;
     height: 25px;
-    margin-left: 20px;
+    margin-left: 15px;
 
     input {
       opacity: 0;
@@ -68,15 +47,14 @@
       height: 0;
     }
 
-    span {
+    .toggleButton {
       position: absolute;
       cursor: pointer;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      background: #2c3333;
-      transition: 0.3s;
+      background: #4d4d4d;
       border-radius: 30px;
 
       &:before {
@@ -84,52 +62,166 @@
         content: '';
         height: 20px;
         width: 20px;
-        left: 1px;
+        left: 3px;
         bottom: 2.6px;
         background-color: #ffffff;
         border-radius: 50%;
-        transition: 0.3s;
+        transition: 0.4s;
+        z-index: 1;
+      }
+
+      &:hover {
+        &::before {
+          box-shadow: 0 0 7px 4px #387ce8;
+        }
       }
     }
 
-    input:checked + span {
-      background-color: #ffffff;
+    .toggleIcons {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: transparent;
+      pointer-events: none;
+      overflow: hidden;
+
+      &::after {
+        position: absolute;
+        left: 30px;
+        top: 3.5px;
+        height: 18px;
+        width: 18px;
+        content: url("data:image/svg+xml,%3csvg version='1.1' id='Layer_1_1_' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' height='18px' width='18px' x='0px' y='0px' viewBox='0 0 16 16' style='enable-background:new 0 0 16 16%3b' xml:space='preserve'%3e%3ccircle cx='8.5' cy='7.5' r='4.5' id='id_101' style='fill: rgb(242%2c 140%2c 56)%3b'%3e%3c/circle%3e%3crect x='8' width='1' height='2' id='id_102' style='fill: rgb(242%2c 140%2c 56)%3b'%3e%3c/rect%3e%3crect x='8' y='13' width='1' height='2' id='id_103' style='fill: rgb(242%2c 140%2c 56)%3b'%3e%3c/rect%3e%3crect x='14' y='7' width='2' height='1' id='id_104' style='fill: rgb(242%2c 140%2c 56)%3b'%3e%3c/rect%3e%3crect x='1' y='7' width='2' height='1' id='id_105' style='fill: rgb(242%2c 140%2c 56)%3b'%3e%3c/rect%3e%3crect x='12.596' y='11.096' transform='matrix(0.7071 -0.7071 0.7071 0.7071 -4.7175 12.8033)' width='1' height='2' id='id_106' style='fill: rgb(242%2c 140%2c 56)%3b'%3e%3c/rect%3e%3crect x='3.404' y='1.904' transform='matrix(0.7071 -0.7071 0.7071 0.7071 -0.9099 3.6109)' width='1' height='2' id='id_107' style='fill: rgb(242%2c 140%2c 56)%3b'%3e%3c/rect%3e%3crect x='2.904' y='11.596' transform='matrix(0.7071 -0.7071 0.7071 0.7071 -7.4099 6.3033)' width='2' height='1' id='id_108' style='fill: rgb(242%2c 140%2c 56)%3b'%3e%3c/rect%3e%3crect x='12.096' y='2.404' transform='matrix(0.7071 -0.7071 0.7071 0.7071 1.7823 10.1107)' width='2' height='1' id='id_109' style='fill: rgb(242%2c 140%2c 56)%3b'%3e%3c/rect%3e%3c/svg%3e");
+        animation: spin linear 8s infinite, fadeInSun linear 0.3s 1;
+
+        @keyframes spin {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+
+        @keyframes fadeInSun {
+          0% {
+            transform: translateX(20px) rotate(0deg);
+          }
+          100% {
+            transform: translateX(0px) rotate(60deg);
+          }
+        }
+      }
+
+      &::before {
+        position: absolute;
+        left: 5px;
+        top: 3.5px;
+        height: 18px;
+        width: 18px;
+        content: url("data:image/svg+xml,%3csvg id='Layer_1' data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' height='18px' width='18px' viewBox='0 0 25 25'%3e%3ctitle%3eMoon%3c/title%3e%3cpath id='Moon' d='M24.86%2c15.53a.5.5%2c0%2c0%2c0-.57%2c0A10.71%2c10.71%2c0%2c0%2c1%2c9.57.79.5.5%2c0%2c0%2c0%2c9%2c0%2c12.77%2c12.77%2c0%2c1%2c0%2c25%2c16%2c.5.5%2c0%2c0%2c0%2c24.86%2c15.53Z' fill='%23f6f1d5'%3e%3c/path%3e%3c/svg%3e");
+        animation: fadeOutMoon linear 0.5s 1;
+
+        @keyframes fadeOutMoon {
+          0% {
+            transform: translate(0px);
+          }
+          100% {
+            transform: translate(-60px);
+          }
+        }
+      }
     }
 
-    input:checked + span:before {
-      background-color: #000000;
+    input:checked + .toggleButton {
+      background-color: #4d4d4d;
+    }
+
+    input:checked + .toggleButton:before {
+      background-color: #ffffff;
       transform: translateX(29px);
+    }
+
+    input:checked ~ .toggleIcons:after {
+      animation: fadeOutSun linear 0.5s 1;
+
+      @keyframes fadeOutSun {
+        0% {
+          transform: translate(0px);
+        }
+        100% {
+          transform: translate(60px);
+        }
+      }
+    }
+
+    input:checked ~ .toggleIcons:before {
+      display: block;
+      animation: ziggle linear 1s infinite, fadeInMoon linear 0.3s 1;
+
+      @keyframes fadeInMoon {
+        0% {
+          transform: translateX(-20px);
+        }
+        100% {
+          transform: translateX(0px);
+        }
+      }
+
+      @keyframes ziggle {
+        0% {
+          transform: rotate(0deg);
+        }
+        25% {
+          transform: rotate(5deg);
+        }
+        50% {
+          transform: rotate(0deg);
+        }
+        75% {
+          transform: rotate(-5deg);
+        }
+        100% {
+          transform: rotate(0deg);
+        }
+      }
     }
   }
 }
 
 .light {
-  background: linear-gradient(
-    90deg,
-    rgb(110, 94, 254) 0%,
-    rgba(73, 63, 252, 1) 100%
-  );
+  background-color: #ffffff;
+
+  .navHeading {
+    color: #151515;
+  }
+
   .navItems {
     & > li {
-      color: white;
+      color: #151515;
+
       &:hover {
-        background-color: #6d76f7;
+        color: #337ef7;
       }
     }
-  }
-  .signInButton {
-    color: #2b38e9;
-    background: #ffffff;
   }
 }
 
 .dark {
-  background-color: #2c3333;
+  background-color: #242525;
+
+  .navHeading {
+    color: #ffffff;
+  }
+
   .navItems {
     & > li {
       color: #ffffff;
+
       &:hover {
-        background-color: #2e4f4f;
+        color: #397ce7;
       }
     }
   }
