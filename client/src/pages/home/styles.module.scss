@@ -1,2 +1,13 @@
 .homeWrapper {
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+
+  .homeHeading {
+    font-family: Rubik;
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--almost-black);
+    letter-spacing: 1px;
+  }
 }

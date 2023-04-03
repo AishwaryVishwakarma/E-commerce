@@ -5,7 +5,9 @@ import styles from './styles.module.scss'
 const Home: React.FC = () => {
   return (
     <Layout nav={true}>
-      <div className={styles.homeWrapper}>Home</div>
+      <div className={styles.homeWrapper}>
+        <div className={styles.homeHeading}>Home Heading</div>
+      </div>
     </Layout>
   )
 }

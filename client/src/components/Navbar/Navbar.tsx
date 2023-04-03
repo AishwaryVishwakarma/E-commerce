@@ -14,7 +14,7 @@ const Navbar: React.FC = () => {
         theme === 'light' ? styles.light : styles.dark
       }`}
     >
-      <h1 className={styles.navHeading}>React</h1>
+      <div className={styles.navHeading}>React</div>
       <ul className={styles.navItems}>
         <li>Home</li>
         <li>Services</li>
@@ -23,7 +23,11 @@ const Navbar: React.FC = () => {
         <li>Sign In</li>
       </ul>
       <label className={styles.toggleLabel}>
-        <input type="checkbox" onChange={setThemeHandler} />
+        <input
+          type="checkbox"
+          onChange={setThemeHandler}
+          checked={theme === 'dark'}
+        />
         <span className={styles.toggleButton} />
         <span className={styles.toggleIcons} />
       </label>
