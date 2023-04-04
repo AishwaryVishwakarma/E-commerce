@@ -1,15 +1,16 @@
 import React from 'react'
 import styles from './styles.module.scss'
-import { ThemeContext } from '../../App'
+import { UtilityContext } from '../../App'
 
 const NAV_TABS = ['Home', 'Service', 'Products', 'Contact Us', 'Sign In']
 
 const Navbar: React.FC = () => {
-  const { theme, setTheme } = React.useContext(ThemeContext) ?? {}
+  const { theme, setTheme, isMobile } = React.useContext(UtilityContext) ?? {}
 
   function setThemeHandler() {
     theme === 'light' ? setTheme?.('dark') : setTheme?.('light')
   }
+
   return (
     <nav
       className={`${styles.navbar} ${

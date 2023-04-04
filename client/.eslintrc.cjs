@@ -8,11 +8,7 @@ module.exports = {
       version: 'detect'
     }
   },
-  extends: [
-    'plugin:react/recommended',
-    'standard-with-typescript',
-    'plugin:prettier/recommended'
-  ],
+  extends: ['plugin:react/recommended', 'standard-with-typescript'],
   overrides: [],
   parserOptions: {
     ecmaVersion: 'latest',
@@ -25,7 +21,6 @@ module.exports = {
     'space-before-function-paren': off,
     'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
-    quotes: [2, 'single', { avoidEscape: true }],
-    '@typescript-eslint/no-unused-vars': 'off'
+    quotes: [2, 'single', { avoidEscape: true }]
   }
 }

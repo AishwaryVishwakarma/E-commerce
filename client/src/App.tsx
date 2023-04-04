@@ -2,21 +2,26 @@ import React from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './App.module.scss'
 import Home from './pages/home/index'
-import { type Theme } from './model'
+import { type Utility } from './model'
+import useMediaQuery from '../src/hooks/useMediaQuery'
 
-export const ThemeContext = React.createContext<Theme | undefined>(undefined)
+export const UtilityContext = React.createContext<Utility>({
+  theme: 'light',
+  setTheme: (state) => state, 
+  isMobile: false
+})
 
-const router = createBrowserRouter([
-  { path: '/', element: <Home /> }
-])
+const router = createBrowserRouter([{ path: '/', element: <Home /> }])
 
 const App: React.FC = () => {
-  const [theme, setTheme] = React.useState('light')
+  const [theme, setTheme] = React.useState<string>('light')
+
+  const isMobile = useMediaQuery('(max-width: 800px)')
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
+    <UtilityContext.Provider value={{ theme, setTheme, isMobile }}>
       <RouterProvider router={router} />
-    </ThemeContext.Provider>
+    </UtilityContext.Provider>
   )
 }
 
