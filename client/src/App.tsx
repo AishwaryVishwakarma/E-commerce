@@ -7,7 +7,7 @@ import { type Theme } from './model'
 export const ThemeContext = React.createContext<Theme | undefined>(undefined)
 
 const router = createBrowserRouter([
-  {path: "/", element: <Home />}
+  { path: '/', element: <Home /> }
 ])
 
 const App: React.FC = () => {

@@ -1,6 +1,8 @@
 import React from 'react'
-import styles from './Navbar.module.scss'
+import styles from './styles.module.scss'
 import { ThemeContext } from '../../App'
+
+const NAV_TABS = ['Home', 'Service', 'Products', 'Contact Us', 'Sign In']
 
 const Navbar: React.FC = () => {
   const { theme, setTheme } = React.useContext(ThemeContext) ?? {}
@@ -16,11 +18,9 @@ const Navbar: React.FC = () => {
     >
       <div className={styles.navHeading}>React</div>
       <ul className={styles.navItems}>
-        <li>Home</li>
-        <li>Services</li>
-        <li>Products</li>
-        <li>Contact Us</li>
-        <li>Sign In</li>
+        {NAV_TABS.map((tab, idx) => (
+          <li key={idx}>{tab}</li>
+        ))}
       </ul>
       <label className={styles.toggleLabel}>
         <input
