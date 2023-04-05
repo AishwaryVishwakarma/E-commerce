@@ -5,7 +5,7 @@ import useMediaQuery from '../src/hooks/useMediaQuery'
 import HomePage from './pages/home/index'
 import ErrorPage from './pages/error'
 import RootLayout from './pages/root'
-import './App.module.scss'
+import "./App.css"
 
 export const UtilityContext = React.createContext<Utility>({
   theme: 'light',
