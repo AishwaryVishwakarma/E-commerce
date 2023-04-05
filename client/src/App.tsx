@@ -3,6 +3,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { type Utility } from './model'
 import useMediaQuery from '../src/hooks/useMediaQuery'
 import HomePage from './pages/home/index'
+import ErrorPage from './pages/error'
+import RootLayout from './pages/root'
 import './App.module.scss'
 
 export const UtilityContext = React.createContext<Utility>({
@@ -11,7 +13,16 @@ export const UtilityContext = React.createContext<Utility>({
   isMobile: false
 })
 
-const router = createBrowserRouter([{ path: '/', element: <HomePage /> }])
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <RootLayout />,
+    children: [
+      { index: true, element: <HomePage /> },
+      { path: '*', element: <ErrorPage /> }
+    ]
+  }
+])
 
 const App: React.FC = () => {
   const [theme, setTheme] = React.useState<string>('light')
