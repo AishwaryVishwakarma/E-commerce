@@ -2,7 +2,7 @@ import React from 'react'
 import Layout from '../../components/Layout/Layout'
 import styles from './styles.module.scss'
 
-const Home: React.FC = () => {
+const HomePage: React.FC = () => {
   return (
     <Layout>
       <div className={styles.homeWrapper}>
@@ -12,4 +12,4 @@ const Home: React.FC = () => {
   )
 }
 
-export default Home
+export default HomePage
