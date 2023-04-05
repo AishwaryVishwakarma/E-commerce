@@ -1,13 +1,12 @@
 import React from 'react'
 import Layout from '../../components/Layout/Layout'
+import HomeHero from '../../components/Home/HomeHero/HomeHero'
 import styles from './styles.module.scss'
 
 const HomePage: React.FC = () => {
   return (
     <Layout>
-      <div className={styles.homeWrapper}>
-        <div className={styles.homeHeading}>Home Heading</div>
-      </div>
+      <HomeHero />
     </Layout>
   )
 }
