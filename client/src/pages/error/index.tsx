@@ -1,14 +1,13 @@
 import React from 'react'
 import Layout from '../../components/Layout/Layout'
-import HomeHero from '../../components/Home/HomeHero/HomeHero'
 import styles from './styles.module.scss'
 
-const HomePage: React.FC = () => {
+const ErrorPage: React.FC = () => {
   return (
     <Layout>
-      <HomeHero />
+      <h1>ErrorPage</h1>
     </Layout>
   )
 }
 
-export default HomePage
+export default ErrorPage

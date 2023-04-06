@@ -18,9 +18,9 @@ module.exports = {
   },
   plugins: ['react'],
   rules: {
+    'space-before-function-paren': off,
     'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
-    quotes: [2, 'single', { avoidEscape: true }],
-    '@typescript-eslint/no-unused-vars': 'off'
+    quotes: [2, 'single', { avoidEscape: true }]
   }
 }
