@@ -25,7 +25,7 @@ const router = createBrowserRouter([
 ])
 
 const App: React.FC = () => {
-  const [theme, setTheme] = React.useState<string>('light')
+  const [theme, setTheme] = React.useState<string>('dark')
 
   const isMobile = useMediaQuery('(max-width: 800px)')
 
