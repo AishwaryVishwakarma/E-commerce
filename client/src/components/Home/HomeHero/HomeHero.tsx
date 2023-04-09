@@ -1,11 +1,7 @@
 import React from 'react'
 import styles from './styles.module.scss'
-import { faker } from '@faker-js/faker/locale/en'
 
 const HomeHero: React.FC = () => {
-  console.log(
-    faker.commerce.department() // => "Toys"
-  )
 
   return (
     <div className={styles.heroWrapper}>

@@ -1,0 +1,45 @@
+.TDWrapper {
+  width: 100%;
+  padding: 20px;
+  background-color: var(--secondary-blue);
+
+  .TDMain {
+    background-color: #ffffff;
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 5px;
+
+    .TDHeadingContainer {
+      color: var(--almost-black);
+      display: flex;
+      align-items: center;
+      gap: 15px;
+
+      & > p {
+        font-family: Nunito;
+        font-weight: 800;
+        font-size: 22px;
+      }
+
+      & > a {
+        color: var(--almost-black);
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .TDCardsSection {
+      width: 100%;
+      margin-top: 15px;
+      display: flex;
+      gap: 20px;
+      overflow-y: auto;
+      padding-bottom: 15px;
+    }
+  }
+}
