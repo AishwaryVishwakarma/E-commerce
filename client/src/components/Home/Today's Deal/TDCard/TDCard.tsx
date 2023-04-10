@@ -6,7 +6,7 @@ interface ProductData {
   productData: DummyData
 }
 
-const Card: React.FC<ProductData> = ({ productData }) => {
+const TDCard: React.FC<ProductData> = ({ productData }) => {
   const { id, maxDiscount, fixedDiscount, timer, name, image } =
     productData ?? {}
 
@@ -43,4 +43,4 @@ const Card: React.FC<ProductData> = ({ productData }) => {
   )
 }
 
-export default Card
+export default TDCard

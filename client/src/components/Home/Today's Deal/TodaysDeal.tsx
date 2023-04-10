@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './styles.module.scss'
 import { Link } from 'react-router-dom'
 import { nanoid } from 'nanoid'
-import Card from './Card/Card'
+import Card from './TDCard/TDCard'
 import { TDDummyData as DummyData } from '../../../model'
 import { GrFormPrevious, GrFormNext } from 'react-icons/gr'
 
