@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { nanoid } from 'nanoid'
 import Card from './Card/Card'
 import { TDDummyData as DummyData } from '../../../model'
+import { GrFormPrevious, GrFormNext } from 'react-icons/gr'
 
 const DUMMY_DATA: DummyData[] = [
   {
@@ -92,6 +93,14 @@ const DUMMY_DATA: DummyData[] = [
 ]
 
 const TodaysDeal: React.FC = () => {
+  let cardsSectionRef = React.useRef<HTMLDivElement | null>(null)
+
+  const scroll = (scrollOffset: number) => {
+    if (cardsSectionRef.current) {
+      cardsSectionRef.current.scrollLeft += scrollOffset
+    }
+  }
+
   return (
     <div className={styles.TDWrapper}>
       <div className={styles.TDMain}>
@@ -99,10 +108,24 @@ const TodaysDeal: React.FC = () => {
           <p>Today's Deals</p>
           <Link to="/">See all deals</Link>
         </div>
-        <div className={styles.TDCardsSection}>
+        <div ref={cardsSectionRef} className={styles.TDCardsSection}>
           {DUMMY_DATA.map((data) => (
-            <Card key={data.id} productData={data}/>
+            <Card key={data.id} productData={data} />
           ))}
+          <button
+            type="button"
+            className={styles.prevButton}
+            onClick={() => scroll(-1400)}
+          >
+            <GrFormPrevious />
+          </button>
+          <button
+            type="button"
+            className={styles.nextButton}
+            onClick={() => scroll(1400)}
+          >
+            <GrFormNext />
+          </button>
         </div>
       </div>
     </div>
