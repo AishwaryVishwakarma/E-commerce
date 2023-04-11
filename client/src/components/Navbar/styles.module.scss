@@ -2,8 +2,10 @@
   display: flex;
   align-items: center;
   padding: 10px 20px 10px 50px;
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 1;
   flex-wrap: wrap;
 
@@ -193,12 +195,14 @@
   }
 }
 
-.light {
-  color: var(--almost-black);
-  background-color: #ffffff;
-}
+// .light {
+//   color: var(--almost-black);
+//   background-color: #ffffff;
+// }
 
 .dark {
   color: #ffffff;
-  background-color: var(--almost-black);
+  background: rgba(2, 21, 45, 0.85);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur1(15px);
 }

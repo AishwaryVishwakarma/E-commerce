@@ -1,13 +1,49 @@
 .heroWrapper {
-  padding: 40px 80px;
+  padding: 100px 100px 40px;
   display: flex;
   justify-content: center;
+  align-items: center;
+  background: url('https://i.postimg.cc/qq1spgjN/Slice-1.png') no-repeat;
+  background-size: cover;
 
-  .heroHeading {
-    font-family: Rubik;
-    font-size: 34px;
-    font-weight: 700;
-    color: var(--almost-black);
-    letter-spacing: 1px;
+  .heroHeadingContainer {
+    max-width: 650px;
+
+    .heroHeading {
+      color: white;
+      font-family: Nunito;
+      font-size: 50px;
+      font-weight: 600;
+      letter-spacing: 1px;
+
+      & > span {
+        font-family: Dancing Script;
+        color: var(--primary-red);
+      }
+    }
+
+    .heroCta {
+      color: white;
+      font-family: Nunito;
+      font-size: 27px;
+      font-weight: 600;
+      background-color: var(--primary-blue);
+      width: max-content;
+      padding: 10px 30px;
+      border-radius: 5px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+  }
+
+  .heroImageContainer {
+    width: 900px;
+    height: auto;
+
+    & > img {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
   }
 }

@@ -23,7 +23,7 @@ const Navbar: React.FC = () => {
           <li key={idx}>{tab}</li>
         ))}
       </ul>
-      <label className={styles.toggleLabel}>
+      {/* <label className={styles.toggleLabel}>
         <input
           type="checkbox"
           onChange={setThemeHandler}
@@ -31,7 +31,7 @@ const Navbar: React.FC = () => {
         />
         <span className={styles.toggleButton} />
         <span className={styles.toggleIcons} />
-      </label>
+      </label> */}
     </nav>
   )
 }
