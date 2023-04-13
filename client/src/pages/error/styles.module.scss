@@ -3,28 +3,26 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 100px 100px 30px 100px;
-  gap: 50px;
+  padding: 100px;
+  gap: 30px;
 
   .textContainer {
-    width: 100%;
+    font-family: Nunito;
+    color: var(--almost-black);
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 
     .textHeading {
-      font-family: Nunito;
       font-weight: 800;
       font-size: 40px;
-      color: var(--almost-black);
       letter-spacing: 1px;
     }
 
     .subtext {
-      padding-top: 20px;
-      padding-bottom: 20px;
-      font-family: Nunito;
       font-weight: 400;
-      font-size: 20px;
-      color: var(--almost-black);
+      font-size: 22px;
       letter-spacing: 0.5px;
 
       & > a {

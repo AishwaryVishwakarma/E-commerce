@@ -1,21 +1,20 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import Layout from '../../components/Layout/Layout'
 import styles from './styles.module.scss'
 
 const ErrorPage: React.FC = () => {
-  const naviagte = useNavigate()
-  const [timer, setTimer] = useState(10000)
+  const navigate = useNavigate()
 
-  const decrementTimer = useCallback(() => {
+  const [timer, setTimer] = React.useState<number>(10)
+
+  const decrementTimer = React.useCallback(() => {
     setTimer((oldTimer) => oldTimer - 1)
   }, [])
 
-  useEffect(() => {
-    if (timer <= 0) {
-      naviagte('/')
-      return
-    }
+  React.useEffect(() => {
+    if (timer <= 0) navigate('/')
+
     const timeoutFunction = setInterval(decrementTimer, 1000)
 
     return () => clearInterval(timeoutFunction)
@@ -24,13 +23,13 @@ const ErrorPage: React.FC = () => {
   return (
     <Layout>
       <div className={styles.errorWrapper}>
-        <img src='https://i.postimg.cc/bvmrDR9X/error-page.png'/>
+        <img src="https://i.postimg.cc/bvmrDR9X/error-page.png" />
         <div className={styles.textContainer}>
           <div className={styles.textHeading}>
-            Oh no! The page doesn't exist.
+            Oh no! The page doesn't exist
           </div>
           <div className={styles.subtext}>
-            Redirecting to <Link to='/'>homepage</Link> in {timer} seconds
+            Redirecting back to <Link to="/">Homepage</Link> in {timer} seconds
           </div>
         </div>
       </div>
