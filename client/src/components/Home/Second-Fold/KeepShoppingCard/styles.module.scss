@@ -1,0 +1,85 @@
+.KSWrapper {
+  width: 350px;
+  background: #ffffff;
+  padding: 25px 20px;
+  height: 430px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  position: relative;
+
+  .title {
+    font-family: Rubik;
+    font-weight: 500;
+    font-size: 21px;
+    user-select: none;
+  }
+
+  .productInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+
+    & > img {
+      height: 192px;
+      width: 192px;
+      margin: 0 auto;
+    }
+
+    & > p {
+      font-family: Nunito;
+      font-size: 13px;
+      font-weight: 600;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      overflow: hidden;
+      -webkit-box-orient: vertical;
+    }
+
+    .priceSection {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin: 5px 0;
+
+      .discountPrice {
+        font-size: 18px;
+        font-family: Nunito;
+        font-weight: 600;
+      }
+
+      .originalPrice {
+        font-size: 14px;
+        text-decoration: line-through;
+        color: #595959;
+      }
+    }
+  }
+
+  .imagesContainer {
+    display: flex;
+    gap: 15px;
+    margin: 0 auto;
+
+    .imageBox {
+      height: 55px;
+      width: 55px;
+      border: 1px solid #797979;
+      padding: 5px;
+      cursor: pointer;
+
+      & > img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    .selected {
+      border: 1px solid orange;
+      background: rgba($color: orange, $alpha: 0.1);
+      box-shadow: 0 0 2px 0 orange;
+    }
+  }
+}
