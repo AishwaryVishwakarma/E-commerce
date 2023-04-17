@@ -4,7 +4,7 @@ import { type Utility } from './model'
 import useMediaQuery from '../src/hooks/useMediaQuery'
 import HomePage from './pages/home/index'
 import ErrorPage from './pages/error'
-import RootLayout from './pages/root'
+import RootLayout from './components/RootLayout/RootLayout'
 import "./App.css"
 
 export const UtilityContext = React.createContext<Utility>({
