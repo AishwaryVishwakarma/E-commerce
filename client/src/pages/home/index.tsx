@@ -4,6 +4,7 @@ import HomeHero from '../../components/Home/HomeHero/HomeHero'
 import styles from './styles.module.scss'
 import TodaysDeal from '../../components/Home/Today\'s-Deal/TodaysDeal'
 import SecondFold from '../../components/Home/Second-Fold/SecondFold'
+import ThirdFold from '../../components/Home/Third-Fold/ThirdFold'
 
 const HomePage: React.FC = () => {
   return (
@@ -11,6 +12,7 @@ const HomePage: React.FC = () => {
       <HomeHero />
       <TodaysDeal />
       <SecondFold />
+      <ThirdFold />
     </Layout>
   )
 }
