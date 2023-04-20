@@ -1,0 +1,91 @@
+.cardWrapper {
+  font-family: Nunito;
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  gap: 10px;
+
+  .prodImage {
+    width: 250px;
+    height: 230px;
+    object-fit: contain;
+    margin-bottom: 10px;
+  }
+
+  .productName {
+    color: #2e80a3;
+    font-size: 14px;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    cursor: pointer;
+  }
+  .starsIcon {
+    color: #ffa41c;
+    font-size: 20px;
+    opacity: 0.5;
+    cursor: pointer;
+  }
+
+  .blockBusterDeal {
+    display: flex;
+    gap: 8px;
+    font-size: 12px;
+    align-items: center;
+    & > p {
+      width: max-content;
+      background-color: var(--secondary-red);
+      color: #ffffff;
+      padding: 5px 8px;
+      border-radius: 3px;
+      font-weight: 700;
+    }
+
+    & > span {
+      display: block;
+      color: var(--secondary-red);
+      font-weight: 800;
+    }
+  }
+
+  .bestSellerDeal {
+    display: flex;
+    gap: 5px;
+
+    .bestSellerImage {
+      width: 77px;
+      height: 21px;
+    }
+  }
+  .discountPrice {
+    font-size: 17px;
+    color: #000000;
+    font-weight: 700;
+  }
+
+  .originalPrice {
+    display: flex;
+    gap: 10px;
+    font-size: 17px;
+  }
+  .freeDelivery {
+    display: flex;
+    gap: 3px;
+    height: 10px;
+    & > img {
+      position: relative;
+      width: 43px;
+      height: 49px;
+      top: -12px;
+    }
+  }
+  .deliveryDate {
+    margin-top: 10px;
+    font-family: Nunito;
+    font-size: 17px;
+    font-weight: 300;
+  }
+}
