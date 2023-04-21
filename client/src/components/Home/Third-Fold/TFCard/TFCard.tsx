@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './styles.module.scss'
 import { Stars, type TFDummyData } from './../../../../model'
 import { RiStarFill } from 'react-icons/ri'
+import { nanoid } from 'nanoid'
 
 interface Data {
   data: TFDummyData
@@ -9,19 +10,19 @@ interface Data {
 
 const STARS: Stars[] = [
   {
-    element: <RiStarFill className={styles.starsIcon} />
+    element: <RiStarFill key={nanoid()} className={styles.starsIcon} />
   },
   {
-    element: <RiStarFill className={styles.starsIcon} />
+    element: <RiStarFill key={nanoid()} className={styles.starsIcon} />
   },
   {
-    element: <RiStarFill className={styles.starsIcon} />
+    element: <RiStarFill key={nanoid()} className={styles.starsIcon} />
   },
   {
-    element: <RiStarFill className={styles.starsIcon} />
+    element: <RiStarFill key={nanoid()} className={styles.starsIcon} />
   },
   {
-    element: <RiStarFill className={styles.starsIcon} />
+    element: <RiStarFill key={nanoid()} className={styles.starsIcon} />
   }
 ]
 
@@ -55,7 +56,7 @@ const TFCard: React.FC<Data> = ({ data }) => {
           <div className={styles.bestSellerDeal}>
             <img
               className={styles.bestSellerImage}
-              src='https://i.postimg.cc/ZRhpvcTZ/best-seller.png'
+              src="https://i.postimg.cc/ZRhpvcTZ/best-seller.png"
             />
             <span>in {category}</span>
           </div>
@@ -72,7 +73,7 @@ const TFCard: React.FC<Data> = ({ data }) => {
         )}
       </div>
       <div className={styles.freeDelivery}>
-        <img src='https://i.postimg.cc/W3BTsZ3C/amazon-prime-icon-1.png' />{' '}
+        <img src="https://i.postimg.cc/W3BTsZ3C/amazon-prime-icon-1.png" />{' '}
         <p>FREE Delivery</p>
       </div>
       <div className={styles.deliveryDate}>{delivery_date}</div>
