@@ -43,7 +43,7 @@ export interface KSDummyData {
 //Third Fold Card
 export interface TFDummyData {
   id: string
-  image: string
+  img: string
   title: string
   rating: number
   discount?: number
