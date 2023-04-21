@@ -29,7 +29,7 @@ const TFCard: React.FC<Data> = ({ data }) => {
   const {
     id,
     title,
-    image,
+    img,
     discount,
     discount_price,
     original_price,
@@ -41,7 +41,7 @@ const TFCard: React.FC<Data> = ({ data }) => {
 
   return (
     <div className={styles.cardWrapper}>
-      <img className={styles.prodImage} src={image} alt={title} />
+      <img className={styles.prodImage} src={img} alt={title} />
       <div className={styles.productName}>{title}</div>
       <div className={styles.rating}>
         {STARS.map((star, idx) => star.element)}
@@ -65,12 +65,10 @@ const TFCard: React.FC<Data> = ({ data }) => {
         {discount ? `₹${discount_price}.00` : `₹${original_price}.00`}
       </div>
       <div className={styles.originalPrice}>
-        {discount ? (
+        {discount && (
           <p>
             M.R.P: <s>₹{original_price}.00</s>
           </p>
-        ) : (
-          <></>
         )}
       </div>
       <div className={styles.freeDelivery}>
