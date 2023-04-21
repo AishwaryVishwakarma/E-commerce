@@ -40,7 +40,6 @@ export interface KSDummyData {
   original_price: number
 }
 
-
 //Third Fold Card
 export interface TFDummyData {
   id: string
@@ -52,5 +51,5 @@ export interface TFDummyData {
   discount_price?: number
   original_price: number
   delivery_date: string
-  free_delivery?: boolean 
+  free_delivery?: boolean
 }
