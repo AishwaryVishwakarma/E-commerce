@@ -1,0 +1,63 @@
+.DCWrapper {
+  width: 350px;
+  background: #ffffff;
+  padding: 25px 20px;
+  height: 430px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  position: relative;
+  overflow: hidden;
+
+  .title {
+    font-family: Rubik;
+    font-weight: 500;
+    font-size: 21px;
+    height: 52px;
+    user-select: none;
+  }
+
+  .productWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 0 auto;
+
+    .productInfo {
+      width: 147px;
+      cursor: pointer;
+
+      & > img {
+        width: 100%;
+        height: 102px;
+        border-radius: 5px;
+        object-fit: cover;
+      }
+
+      & > p {
+        font-family: Nunito;
+        font-size: 12px;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        line-clamp: 1;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+      }
+    }
+  }
+
+  .cta {
+    color: #007185;
+    font-family: Nunito;
+    font-size: 13px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 18px;
+    left: 20px;
+
+    &:hover {
+      text-decoration: underline;
+      color: var(--secondary-red);
+    }
+  }
+}

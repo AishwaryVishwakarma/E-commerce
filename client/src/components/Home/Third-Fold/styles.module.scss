@@ -1,0 +1,67 @@
+.TFWrapper {
+  width: 100%;
+  padding: 20px;
+  background-color: var(--secondary-blue);
+
+  .TFMain {
+    background-color: #ffffff;
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 5px;
+    position: relative;
+
+    .TFCardsSection {
+      width: 100%;
+      margin-top: 15px;
+      display: flex;
+      gap: 20px;
+      overflow-x: scroll;
+      padding-bottom: 15px;
+      transition: all 0.5s ease-in-out;
+      scroll-behavior: smooth;
+
+      &::-webkit-scrollbar {
+        height: 7px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: #c4c4c4;
+        border-radius: 49px;
+
+        &:hover {
+          background-color: #aaaaaa;
+        }
+      }
+    }
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      height: 50px;
+      width: 50px;
+      cursor: pointer;
+      border: none;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba($color: #ffffff, $alpha: 0.9);
+      font-size: 37px;
+      top: 175px;
+    }
+
+    .prevButton {
+      left: 20px;
+      border-radius: 0 5px 5px 0;
+      box-shadow: 1.5px 0 3px 1px #c4c4c4;
+    }
+
+    .nextButton {
+      right: 20px;
+      border-radius: 5px 0 0 5px;
+      box-shadow: -1.5px 0 3px 1px #c4c4c4;
+    }
+  }
+}

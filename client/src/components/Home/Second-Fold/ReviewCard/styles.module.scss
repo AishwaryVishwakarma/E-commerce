@@ -1,0 +1,54 @@
+.RCWrapper {
+  background: white;
+  width: 350px;
+  height: 430px;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  position: relative;
+
+  .title {
+    font-family: Rubik;
+    font-weight: 500;
+    font-size: 21px;
+    user-select: none;
+    height: 50px;
+  }
+
+  .product {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+
+    & > img {
+      height: 200px;
+      width: 215px;
+      cursor: pointer;
+    }
+
+    .starsIcon {
+      color: #e59249;
+      font-size: 38px;
+      opacity: 0.8;
+      cursor: pointer;
+    }
+  }
+
+  .cta {
+    color: #007185;
+    font-family: Nunito;
+    font-size: 13px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 18px;
+    left: 20px;
+
+    &:hover {
+      text-decoration: underline;
+      color: var(--secondary-red);
+    }
+  }
+}
