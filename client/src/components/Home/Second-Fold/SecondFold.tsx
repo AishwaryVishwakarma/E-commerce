@@ -1,10 +1,10 @@
 import React from 'react'
 import styles from './styles.module.scss'
 import ReviewCard from './ReviewCard/ReviewCard'
-import DiscountCard from './DiscountCard/DiscountCard'
+import DiscountCard from './CategoryDiscount/CategoryDiscountCard'
 import { type CategoryDiscountCard } from '../../../model'
 import { nanoid } from 'nanoid'
-import KeepShoppingCard from './KeepShoppingCard/KeepShoppingCard'
+import KeepShoppingCard from './KeepShopping/KeepShopping'
 
 const DISCOUNT_CARD_DETAILS: CategoryDiscountCard[] = [
   {
