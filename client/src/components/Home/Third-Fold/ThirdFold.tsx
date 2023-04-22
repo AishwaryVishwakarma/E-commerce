@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './styles.module.scss'
 import { nanoid } from 'nanoid'
 import { type ProductCard } from '../../../model'
-import TFCard from './ProductDetailsCard/ProductDetailsCard'
+import TFCard from '../../Commons/Cards/ProductDetailsCard/ProductDetailsCard'
 import { GrFormPrevious, GrFormNext } from 'react-icons/gr'
 
 const TF_DUMMY_DATA: ProductCard[] = [
