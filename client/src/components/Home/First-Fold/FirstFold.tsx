@@ -5,6 +5,7 @@ import { nanoid } from 'nanoid'
 import TodaysDealCard from '../../Commons/Cards/TodaysDeal/TodaysDealCard'
 import { type TodaysDealData } from '../../../model'
 import { GrFormPrevious, GrFormNext } from 'react-icons/gr'
+import Card from '../../Commons/Card/Card'
 
 const DUMMY_DATA: TodaysDealData[] = [
   {
@@ -110,7 +111,7 @@ const FirstFold: React.FC = () => {
         </div>
         <div ref={cardsSectionRef} className={styles.TDCardsSection}>
           {DUMMY_DATA.map((data) => (
-            <TodaysDealCard key={data.id} productData={data} />
+            <Card key={data.id} type="todays-deal" data={data} />
           ))}
           <button
             type="button"

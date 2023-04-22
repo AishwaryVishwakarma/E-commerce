@@ -59,9 +59,10 @@ export interface ProductData {
 }
 
 //Generic Card
-export interface Card {
+export interface genericCard {
+  key: string
   type:
-    | 'todays=deal'
+    | 'todays-deal'
     | 'review-purchase'
     | 'category-discount'
     | 'keep-shopping'
