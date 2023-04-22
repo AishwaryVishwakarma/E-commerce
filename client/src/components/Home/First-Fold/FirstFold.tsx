@@ -92,7 +92,7 @@ const DUMMY_DATA: TodaysDealCard[] = [
   }
 ]
 
-const TodaysDeal: React.FC = () => {
+const FirstFold: React.FC = () => {
   let cardsSectionRef = React.useRef<HTMLDivElement | null>(null)
 
   const scroll = (scrollOffset: number) => {
@@ -132,4 +132,4 @@ const TodaysDeal: React.FC = () => {
   )
 }
 
-export default TodaysDeal
+export default FirstFold
