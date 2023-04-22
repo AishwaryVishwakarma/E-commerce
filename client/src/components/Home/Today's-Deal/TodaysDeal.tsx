@@ -3,10 +3,10 @@ import styles from './styles.module.scss'
 import { Link } from 'react-router-dom'
 import { nanoid } from 'nanoid'
 import Card from './TDCard/TDCard'
-import { TDDummyData as DummyData } from '../../../model'
+import { type TodaysDealCard } from '../../../model'
 import { GrFormPrevious, GrFormNext } from 'react-icons/gr'
 
-const DUMMY_DATA: DummyData[] = [
+const DUMMY_DATA: TodaysDealCard[] = [
   {
     id: nanoid(),
     maxDiscount: 62,

@@ -1,9 +1,9 @@
 import React from 'react'
 import styles from './styles.module.scss'
-import { TDDummyData as DummyData } from '../../../../model'
+import { type TodaysDealCard } from '../../../../model'
 
 interface ProductData {
-  productData: DummyData
+  productData: TodaysDealCard
 }
 
 const TDCard: React.FC<ProductData> = ({ productData }) => {

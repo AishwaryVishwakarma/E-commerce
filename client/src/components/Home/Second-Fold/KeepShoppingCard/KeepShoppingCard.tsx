@@ -1,9 +1,9 @@
 import React from 'react'
 import styles from './styles.module.scss'
-import { type KSDummyData } from '../../../../model'
+import { type KeepShoppingCard } from '../../../../model'
 import { nanoid } from 'nanoid'
 
-const KEEP_SHOPPING_DATA: KSDummyData[] = [
+const KEEP_SHOPPING_DATA: KeepShoppingCard[] = [
   {
     id: nanoid(),
     img: 'https://m.media-amazon.com/images/I/31pAe23ncfL._SX300_SY300_QL70_FMwebp_.jpg',
@@ -35,7 +35,7 @@ const KEEP_SHOPPING_DATA: KSDummyData[] = [
 ]
 
 const KeepShoppingCard: React.FC = () => {
-  const [displayProduct, setDisplayProduct] = React.useState<KSDummyData>(
+  const [displayProduct, setDisplayProduct] = React.useState<KeepShoppingCard>(
     KEEP_SHOPPING_DATA[0]
   )
 

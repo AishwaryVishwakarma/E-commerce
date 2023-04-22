@@ -1,11 +1,11 @@
 import React from 'react'
 import styles from './styles.module.scss'
-import { Stars, type TFDummyData } from './../../../../model'
+import { Stars, type ProductCard } from './../../../../model'
 import { RiStarFill } from 'react-icons/ri'
 import { nanoid } from 'nanoid'
 
 interface Data {
-  data: TFDummyData
+  data: ProductCard
 }
 
 const STARS: Stars[] = [

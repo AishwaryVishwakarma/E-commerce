@@ -2,11 +2,11 @@ import React from 'react'
 import styles from './styles.module.scss'
 import ReviewCard from './ReviewCard/ReviewCard'
 import DiscountCard from './DiscountCard/DiscountCard'
-import { type DCDummyData } from '../../../model'
+import { type CategoryDiscountCard } from '../../../model'
 import { nanoid } from 'nanoid'
 import KeepShoppingCard from './KeepShoppingCard/KeepShoppingCard'
 
-const DISCOUNT_CARD_DETAILS: DCDummyData[] = [
+const DISCOUNT_CARD_DETAILS: CategoryDiscountCard[] = [
   {
     id: nanoid(),
     title: 'Up to 60% off | Tool & home improvement',

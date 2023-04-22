@@ -4,8 +4,8 @@ export interface Utility {
   isMobile: boolean
 }
 
-//Today's Deal card
-export interface TDDummyData {
+//Today's Deal card (1dt Fold)
+export interface TodaysDealCard {
   id: string
   maxDiscount?: number
   fixedDiscount?: number
@@ -23,16 +23,16 @@ interface Product {
   name: string
 }
 
-//Discount Card
-export interface DCDummyData {
+//Category Discount Card (2nd Fold)
+export interface CategoryDiscountCard {
   id: string
   title: string
   products: Product[]
   cta: string
 }
 
-//Keep Shopping Card
-export interface KSDummyData {
+//Keep Shopping Card (2nd Fold)
+export interface KeepShoppingCard {
   id: string
   img: string
   name: string
@@ -40,8 +40,8 @@ export interface KSDummyData {
   original_price: number
 }
 
-//Third Fold Card
-export interface TFDummyData {
+//Product Card (3rd Fold)
+export interface ProductCard {
   id: string
   img: string
   title: string
@@ -52,4 +52,10 @@ export interface TFDummyData {
   original_price: number
   delivery_date: string
   free_delivery?: boolean
+}
+
+//Generic Card
+export interface Card {
+  type: string
+  data: TodaysDealCard | CategoryDiscountCard | KeepShoppingCard | ProductCard
 }
