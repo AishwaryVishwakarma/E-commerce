@@ -18,6 +18,10 @@ export interface Stars {
   element: React.ReactElement
 }
 
+export interface ReviewCard {
+  img: string
+}
+
 interface Product {
   img: string
   name: string
@@ -57,5 +61,5 @@ export interface ProductCard {
 //Generic Card
 export interface Card {
   type: string
-  data: TodaysDealCard | CategoryDiscountCard | KeepShoppingCard | ProductCard
+  data: TodaysDealCard | ReviewCard | CategoryDiscountCard | KeepShoppingCard | ProductCard
 }
