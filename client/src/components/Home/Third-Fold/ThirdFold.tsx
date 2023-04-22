@@ -1,8 +1,8 @@
 import React from 'react'
 import styles from './styles.module.scss'
 import { nanoid } from 'nanoid'
-import { type ProductCard } from './../../../model'
-import TFCard from './TFCard/TFCard'
+import { type ProductCard } from '../../../model'
+import TFCard from './ProductDetailsCard/ProductDetailsCard'
 import { GrFormPrevious, GrFormNext } from 'react-icons/gr'
 
 const TF_DUMMY_DATA: ProductCard[] = [
@@ -127,14 +127,14 @@ const ThirdFold: React.FC = () => {
             <TFCard key={data.id} data={data} />
           ))}
           <button
-            type='button'
+            type="button"
             className={styles.prevButton}
             onClick={() => scroll(-1400)}
           >
             <GrFormPrevious />
           </button>
           <button
-            type='button'
+            type="button"
             className={styles.nextButton}
             onClick={() => scroll(1400)}
           >

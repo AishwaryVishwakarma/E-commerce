@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './styles.module.scss'
-import { Stars, type ProductCard } from './../../../../model'
+import { Stars, type ProductCard } from '../../../../model'
 import { RiStarFill } from 'react-icons/ri'
 import { nanoid } from 'nanoid'
 
@@ -26,7 +26,7 @@ const STARS: Stars[] = [
   }
 ]
 
-const TFCard: React.FC<Data> = ({ data }) => {
+const ProductDetailsCard: React.FC<Data> = ({ data }) => {
   const {
     id,
     title,
@@ -81,4 +81,4 @@ const TFCard: React.FC<Data> = ({ data }) => {
   )
 }
 
-export default TFCard
+export default ProductDetailsCard
