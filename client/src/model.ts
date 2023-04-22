@@ -60,7 +60,12 @@ export interface ProductData {
 
 //Generic Card
 export interface Card {
-  type: string
+  type:
+    | 'todays=deal'
+    | 'review-purchase'
+    | 'category-discount'
+    | 'keep-shopping'
+    | 'product-detail'
   data:
     | TodaysDealData
     | ReviewPurchaseData
