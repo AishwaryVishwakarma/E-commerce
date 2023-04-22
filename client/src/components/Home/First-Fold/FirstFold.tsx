@@ -2,11 +2,11 @@ import React from 'react'
 import styles from './styles.module.scss'
 import { Link } from 'react-router-dom'
 import { nanoid } from 'nanoid'
-import Card from '../../Commons/Cards/TodaysDeal/TodaysDealCard'
-import { type TodaysDealCard } from '../../../model'
+import TodaysDealCard from '../../Commons/Cards/TodaysDeal/TodaysDealCard'
+import { type TodaysDealData } from '../../../model'
 import { GrFormPrevious, GrFormNext } from 'react-icons/gr'
 
-const DUMMY_DATA: TodaysDealCard[] = [
+const DUMMY_DATA: TodaysDealData[] = [
   {
     id: nanoid(),
     maxDiscount: 62,
@@ -110,7 +110,7 @@ const FirstFold: React.FC = () => {
         </div>
         <div ref={cardsSectionRef} className={styles.TDCardsSection}>
           {DUMMY_DATA.map((data) => (
-            <Card key={data.id} productData={data} />
+            <TodaysDealCard key={data.id} productData={data} />
           ))}
           <button
             type="button"

@@ -5,7 +5,7 @@ export interface Utility {
 }
 
 //Today's Deal card (1dt Fold)
-export interface TodaysDealCard {
+export interface TodaysDealData {
   id: string
   maxDiscount?: number
   fixedDiscount?: number
@@ -18,7 +18,7 @@ export interface Stars {
   element: React.ReactElement
 }
 
-export interface ReviewCard {
+export interface ReviewPurchaseData {
   img: string
 }
 
@@ -28,7 +28,7 @@ interface Product {
 }
 
 //Category Discount Card (2nd Fold)
-export interface CategoryDiscountCard {
+export interface CategoryDiscountData {
   id: string
   title: string
   products: Product[]
@@ -36,7 +36,7 @@ export interface CategoryDiscountCard {
 }
 
 //Keep Shopping Card (2nd Fold)
-export interface KeepShoppingCard {
+export interface KeepShoppingData {
   id: string
   img: string
   name: string
@@ -45,7 +45,7 @@ export interface KeepShoppingCard {
 }
 
 //Product Card (3rd Fold)
-export interface ProductCard {
+export interface ProductData {
   id: string
   img: string
   title: string
@@ -61,5 +61,10 @@ export interface ProductCard {
 //Generic Card
 export interface Card {
   type: string
-  data: TodaysDealCard | ReviewCard | CategoryDiscountCard | KeepShoppingCard | ProductCard
+  data:
+    | TodaysDealData
+    | ReviewPurchaseData
+    | CategoryDiscountData
+    | KeepShoppingData
+    | ProductData
 }

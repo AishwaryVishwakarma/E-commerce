@@ -1,12 +1,12 @@
 import React from 'react'
 import styles from './styles.module.scss'
-import ReviewCard from '../../Commons/Cards/ReviewPurchase/ReviewPurchaseCard'
-import DiscountCard from '../../Commons/Cards/CategoryDiscount/CategoryDiscountCard'
-import { type CategoryDiscountCard } from '../../../model'
+import ReviewPurchaseCard from '../../Commons/Cards/ReviewPurchase/ReviewPurchaseCard'
+import CategoryDiscountCard from '../../Commons/Cards/CategoryDiscount/CategoryDiscountCard'
+import { type CategoryDiscountData } from '../../../model'
 import { nanoid } from 'nanoid'
 import KeepShoppingCard from '../../Commons/Cards/KeepShopping/KeepShoppingCard'
 
-const DISCOUNT_CARD_DETAILS: CategoryDiscountCard[] = [
+const DISCOUNT_CARD_DETAILS: CategoryDiscountData[] = [
   {
     id: nanoid(),
     title: 'Up to 60% off | Tool & home improvement',
@@ -59,9 +59,9 @@ const SecondFold: React.FC = () => {
   return (
     <section className={styles.SFWrapper}>
       <div className={styles.contentContainer}>
-        <ReviewCard />
+        <ReviewPurchaseCard />
         {DISCOUNT_CARD_DETAILS.map((ele, idx) => (
-          <DiscountCard key={ele.id} data={ele}/>
+          <CategoryDiscountCard key={ele.id} data={ele} />
         ))}
         <KeepShoppingCard />
       </div>

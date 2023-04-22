@@ -1,11 +1,11 @@
 import React from 'react'
 import styles from './styles.module.scss'
 import { nanoid } from 'nanoid'
-import { type ProductCard } from '../../../model'
+import { type ProductData } from '../../../model'
 import TFCard from '../../Commons/Cards/ProductDetail/ProductDetailCard'
 import { GrFormPrevious, GrFormNext } from 'react-icons/gr'
 
-const TF_DUMMY_DATA: ProductCard[] = [
+const TF_DUMMY_DATA: ProductData[] = [
   {
     id: nanoid(),
     title:

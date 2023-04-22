@@ -1,9 +1,9 @@
 import React from 'react'
 import styles from './styles.module.scss'
-import { type CategoryDiscountCard } from '../../../../model'
+import { type CategoryDiscountData } from '../../../../model'
 
 interface Data {
-  data: CategoryDiscountCard
+  data: CategoryDiscountData
 }
 
 const DiscountCard: React.FC<Data> = ({ data }) => {
