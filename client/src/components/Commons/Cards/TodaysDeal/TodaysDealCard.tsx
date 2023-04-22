@@ -6,7 +6,7 @@ interface ProductData {
   productData: TodaysDealCard
 }
 
-const TDCard: React.FC<ProductData> = ({ productData }) => {
+const TodaysDealCard: React.FC<ProductData> = ({ productData }) => {
   const { id, maxDiscount, fixedDiscount, timer, name, image } =
     productData ?? {}
 
@@ -43,4 +43,4 @@ const TDCard: React.FC<ProductData> = ({ productData }) => {
   )
 }
 
-export default TDCard
+export default TodaysDealCard

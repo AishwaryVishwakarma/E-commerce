@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './styles.module.scss'
 import { Link } from 'react-router-dom'
 import { nanoid } from 'nanoid'
-import Card from '../../Commons/Cards/TodaysDeal/TDCard'
+import Card from '../../Commons/Cards/TodaysDeal/TodaysDealCard'
 import { type TodaysDealCard } from '../../../model'
 import { GrFormPrevious, GrFormNext } from 'react-icons/gr'
 

@@ -26,7 +26,7 @@ const STARS: Stars[] = [
   }
 ]
 
-const ProductDetailsCard: React.FC<Data> = ({ data }) => {
+const ProductDetailCard: React.FC<Data> = ({ data }) => {
   const {
     id,
     title,
@@ -81,4 +81,4 @@ const ProductDetailsCard: React.FC<Data> = ({ data }) => {
   )
 }
 
-export default ProductDetailsCard
+export default ProductDetailCard

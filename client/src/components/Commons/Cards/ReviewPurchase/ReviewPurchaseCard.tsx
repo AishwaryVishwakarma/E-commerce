@@ -22,7 +22,7 @@ const STARS: Stars[] = [
   }
 ]
 
-const ReviewCard: React.FC = () => {
+const ReviewPurchaseCard: React.FC = () => {
   return (
     <div className={styles.RCWrapper}>
       <p className={styles.title}>Review your purchase</p>
@@ -38,4 +38,4 @@ const ReviewCard: React.FC = () => {
   )
 }
 
-export default ReviewCard
+export default ReviewPurchaseCard

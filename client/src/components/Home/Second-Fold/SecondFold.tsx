@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './styles.module.scss'
-import ReviewCard from '../../Commons/Cards/ReviewCard/ReviewCard'
+import ReviewCard from '../../Commons/Cards/ReviewPurchase/ReviewPurchaseCard'
 import DiscountCard from '../../Commons/Cards/CategoryDiscount/CategoryDiscountCard'
 import { type CategoryDiscountCard } from '../../../model'
 import { nanoid } from 'nanoid'
