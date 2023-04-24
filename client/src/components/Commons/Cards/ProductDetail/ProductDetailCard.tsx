@@ -1,11 +1,11 @@
 import React from 'react'
 import styles from './styles.module.scss'
-import { Stars, type ProductData } from '../../../../model'
+import { type Stars, type ProductDetailData } from '../../../../model'
 import { RiStarFill } from 'react-icons/ri'
 import { nanoid } from 'nanoid'
 
 interface Data {
-  data: ProductData
+  data: ProductDetailData
 }
 
 const STARS: Stars[] = [

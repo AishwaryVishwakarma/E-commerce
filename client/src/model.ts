@@ -44,8 +44,8 @@ export interface KeepShoppingData {
   original_price: number
 }
 
-//Product Card (3rd Fold)
-export interface ProductData {
+//Product Detail Card (3rd Fold)
+export interface ProductDetailData {
   id: string
   img: string
   title: string
@@ -71,5 +71,5 @@ export interface genericCard {
     | ReviewPurchaseData
     | CategoryDiscountData
     | KeepShoppingData
-    | ProductData
+    | ProductDetailData
 }

@@ -26,7 +26,7 @@ const Card: React.FC<genericCard> = ({ type, data }) => {
 
   const cardType = getCardType()
 
-  return <div>{cardType}</div>
+  return cardType
 }
 
 export default Card
