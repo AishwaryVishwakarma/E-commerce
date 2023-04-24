@@ -4,7 +4,7 @@ export interface Utility {
   isMobile: boolean
 }
 
-//Today's Deal card (1dt Fold)
+//Today's Deal card (1st Fold)
 export interface TodaysDealData {
   id: string
   maxDiscount?: number
@@ -60,14 +60,13 @@ export interface ProductData {
 
 //Generic Card
 export interface genericCard {
-  key: string
   type:
     | 'todays-deal'
     | 'review-purchase'
     | 'category-discount'
     | 'keep-shopping'
     | 'product-detail'
-  data:
+  data?:
     | TodaysDealData
     | ReviewPurchaseData
     | CategoryDiscountData

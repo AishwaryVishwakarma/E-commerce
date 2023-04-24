@@ -3,12 +3,12 @@ import styles from './styles.module.scss'
 import { type TodaysDealData } from '../../../../model'
 
 interface ProductData {
-  productData: TodaysDealData
+  data: TodaysDealData
 }
 
-const TodaysDealCard: React.FC<ProductData> = ({ productData }) => {
+const TodaysDealCard: React.FC<ProductData> = ({ data }) => {
   const { id, maxDiscount, fixedDiscount, timer, name, image } =
-    productData ?? {}
+    data ?? {}
 
   const [countdown, setCountdown] = React.useState(() => timer)
 

@@ -6,7 +6,7 @@ interface Data {
   data: CategoryDiscountData
 }
 
-const DiscountCard: React.FC<Data> = ({ data }) => {
+const CategoryDiscountCard: React.FC<Data> = ({ data }) => {
   const { title, products, cta } = data ?? {}
 
   return (
@@ -25,4 +25,4 @@ const DiscountCard: React.FC<Data> = ({ data }) => {
   )
 }
 
-export default DiscountCard
+export default CategoryDiscountCard
