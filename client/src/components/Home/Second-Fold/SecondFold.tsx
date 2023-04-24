@@ -1,10 +1,7 @@
 import React from 'react'
 import styles from './styles.module.scss'
-import ReviewPurchaseCard from '../../Commons/Cards/ReviewPurchase/ReviewPurchaseCard'
-import CategoryDiscountCard from '../../Commons/Cards/CategoryDiscount/CategoryDiscountCard'
 import { type CategoryDiscountData } from '../../../model'
 import { nanoid } from 'nanoid'
-import KeepShoppingCard from '../../Commons/Cards/KeepShopping/KeepShoppingCard'
 import Card from '../../Commons/Card/Card'
 
 const DISCOUNT_CARD_DETAILS: CategoryDiscountData[] = [
@@ -60,11 +57,11 @@ const SecondFold: React.FC = () => {
   return (
     <section className={styles.SFWrapper}>
       <div className={styles.contentContainer}>
-        <Card type='review-purchase'/>
+        <Card type="review-purchase" />
         {DISCOUNT_CARD_DETAILS.map((ele, idx) => (
-          <CategoryDiscountCard key={ele.id} data={ele} />
+          <Card type="category-discount" key={ele.id} data={ele} />
         ))}
-        <Card type='keep-shopping'/>
+        <Card type="keep-shopping" />
       </div>
     </section>
   )
