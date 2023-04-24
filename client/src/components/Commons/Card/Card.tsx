@@ -7,7 +7,7 @@ import CategoryDiscountCard from '../Cards/CategoryDiscount/CategoryDiscountCard
 import KeepShoppingCard from '../Cards/KeepShopping/KeepShoppingCard'
 
 const Card: React.FC<genericCard> = ({ type, data }) => {
-  const getCardType = () => {
+  const getCardType = (): JSX.Element => {
     switch (type) {
       case 'todays-deal':
         return <TodaysDealCard data={data} />
