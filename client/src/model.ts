@@ -18,6 +18,7 @@ export interface Stars {
   element: React.ReactElement
 }
 
+//Review Purchase Card (2nd Fold)
 export interface ReviewPurchaseData {
   img: string
 }
@@ -59,17 +60,17 @@ export interface ProductDetailData {
 }
 
 //Generic Card
-export interface genericCard {
+export interface GenericCard {
   type:
     | 'todays-deal'
     | 'review-purchase'
     | 'category-discount'
     | 'keep-shopping'
     | 'product-detail'
-  data?:
+  data:
     | TodaysDealData
     | ReviewPurchaseData
     | CategoryDiscountData
-    | KeepShoppingData
+    | KeepShoppingData[]
     | ProductDetailData
 }

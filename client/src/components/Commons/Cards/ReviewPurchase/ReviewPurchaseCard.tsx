@@ -2,7 +2,11 @@ import React from 'react'
 import styles from './styles.module.scss'
 import { BsStar } from 'react-icons/bs'
 import { nanoid } from 'nanoid'
-import { type Stars } from '../../../../model'
+import { ReviewPurchaseData, type Stars } from '../../../../model'
+
+interface Data {
+  data: ReviewPurchaseData
+}
 
 const STARS: Stars[] = [
   {
@@ -22,16 +26,17 @@ const STARS: Stars[] = [
   }
 ]
 
-const ReviewPurchaseCard: React.FC = () => {
+const ReviewPurchaseCard: React.FC<Data> = ({ data }) => {
+  const { img } = data ?? {}
   return (
     <div className={styles.RCWrapper}>
       <p className={styles.title}>Review your purchase</p>
       <div className={styles.product}>
         <img
-          src="https://m.media-amazon.com/images/I/51SzLWO7e+L._SR215,215_.jpg"
-          alt=""
+          src={img}
+          alt="product-image"
         />
-        <div>{STARS.map((star, idx) => star.element)}</div>
+        <div>{STARS.map((star) => star.element)}</div>
       </div>
       <p className={styles.cta}>See more products to review</p>
     </div>
