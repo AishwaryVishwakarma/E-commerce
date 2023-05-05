@@ -1,10 +1,10 @@
 import React from 'react'
 import { nanoid } from 'nanoid'
 import Card from '../../Commons/Card/Card'
-import { FourthFoldData } from '../../../model'
+import { CategoryDiscountData, KeepShoppingData } from '../../../model'
 import styles from './styles.module.scss'
 
-const KEEP_SHOPPING_DETAILS: FourthFoldData[] = [
+const KEEP_SHOPPING_DETAILS: KeepShoppingData[] = [
   {
     id: nanoid(),
     cta: 'Keep Shopping for',
@@ -109,13 +109,37 @@ const KEEP_SHOPPING_DETAILS: FourthFoldData[] = [
   }
 ]
 
+const DISCOUNT_CARD_DETAILS: CategoryDiscountData[] = [
+  {
+    id: nanoid(),
+    title: 'Pick Up where you left off',
+    products: [
+      {
+        img: 'https://m.media-amazon.com/images/I/61HHS0HrjpL._AC_UY327_FMwebp_QL65_.jpg',
+        
+      },
+      {
+        img: 'https://m.media-amazon.com/images/I/71ZDY57yTQL._AC_UY327_FMwebp_QL65_.jpg',
+        
+      },
+      {
+        img: 'https://m.media-amazon.com/images/I/41xHTtB5juL._SX300_SY300_QL70_FMwebp_.jpg',
+        
+      },
+      {
+        img: 'https://m.media-amazon.com/images/I/41WpkxwZ+WL._SY300_SX300_.jpg',
+      }
+    ],
+  },]
+
 const FourthFold: React.FC = () => {
   return (
     <section className={styles.SFWrapper}>
       <div className={styles.contentContainer}>
         {KEEP_SHOPPING_DETAILS.map((ele, idx) => {
-          return <Card type="fourth-fold" data={ele} key={ele.id} />
+          return <Card type="keep-shopping" data={ele} key={ele.id} />
         })}
+        <Card type='category-discount' data={DISCOUNT_CARD_DETAILS[0]} />
       </div>
     </section>
   )

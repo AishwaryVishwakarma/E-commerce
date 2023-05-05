@@ -44,7 +44,18 @@
         -webkit-box-orient: vertical;
       }
     }
-  }
+    
+    .alternateProductInfo{
+      width: 147px;
+      cursor: pointer;
+
+      & > img {
+        width: 100%;
+        height: 156px;
+        object-fit: contain;
+      }
+      
+    }
 
   .cta {
     color: #007185;
@@ -60,4 +71,5 @@
       color: var(--secondary-red);
     }
   }
+}
 }

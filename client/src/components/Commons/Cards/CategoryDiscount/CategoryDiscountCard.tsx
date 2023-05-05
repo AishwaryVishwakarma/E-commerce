@@ -14,7 +14,7 @@ const CategoryDiscountCard: React.FC<Data> = ({ data }) => {
       <p className={styles.title}>{title}</p>
       <div className={styles.productWrapper}>
         {products.map((product, idx) => (
-          <div key={idx} className={styles.productInfo}>
+          <div key={idx} className={ product.name ? styles.productInfo : styles.alternateProductInfo} >
             <img src={product.img} alt="" />
             <p>{product.name}</p>
           </div>

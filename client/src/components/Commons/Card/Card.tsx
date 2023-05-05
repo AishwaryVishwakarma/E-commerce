@@ -5,7 +5,6 @@ import ProductDetailCard from '../Cards/ProductDetail/ProductDetailCard'
 import ReviewPurchaseCard from '../Cards/ReviewPurchase/ReviewPurchaseCard'
 import CategoryDiscountCard from '../Cards/CategoryDiscount/CategoryDiscountCard'
 import KeepShoppingCard from '../Cards/KeepShopping/KeepShoppingCard'
-import FourthFoldCard from '../Cards/FourthFoldCard/FourthFoldCard'
 
 const Card: React.FC<GenericCard> = ({ type, data }) => {
   const getCardType = (): JSX.Element => {
@@ -20,8 +19,6 @@ const Card: React.FC<GenericCard> = ({ type, data }) => {
         return <KeepShoppingCard data={data} />
       case 'product-detail':
         return <ProductDetailCard data={data} />
-      case 'fourth-fold':
-        return <FourthFoldCard data={data}/>
       default:
         return <ProductDetailCard data={data} />
     }

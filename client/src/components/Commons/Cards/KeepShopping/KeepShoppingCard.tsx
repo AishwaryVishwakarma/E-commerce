@@ -1,19 +1,19 @@
 import React from 'react'
 import styles from './styles.module.scss'
-import { type KeepShoppingData } from '../../../../model'
+import { KeepShoppingProductData, type KeepShoppingData } from '../../../../model'
 
 interface Data {
-  data: KeepShoppingData[]
+  data: KeepShoppingData 
 }
 
 const KeepShoppingCard: React.FC<Data> = ({data}) => {
 
-  const [displayProduct, setDisplayProduct] = React.useState<KeepShoppingData>(
-    data[0]
+  const [displayProduct, setDisplayProduct] = React.useState<KeepShoppingProductData>(
+    data.product[0]
   )
 
   const changeDisplayProduct = (id: string) => {
-    const filterProduct = data.filter(
+    const filterProduct = data.product.filter(
       (product) => id === product.id
     )
     setDisplayProduct(filterProduct[0])
@@ -21,7 +21,7 @@ const KeepShoppingCard: React.FC<Data> = ({data}) => {
 
   return (
     <div className={styles.KSWrapper}>
-      <p className={styles.title}>Keep Shopping for</p>
+      <p className={styles.title}>{data.cta}</p>
       <div className={styles.productInfo}>
         <img src={displayProduct.img} alt="" />
         <p>{displayProduct.name}</p>
@@ -35,7 +35,7 @@ const KeepShoppingCard: React.FC<Data> = ({data}) => {
         </div>
       </div>
       <div className={styles.imagesContainer}>
-        {data.map((product) => (
+        {data.product.map((product) => (
           <div
             key={product.id}
             className={`${styles.imageBox} ${

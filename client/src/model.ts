@@ -25,7 +25,7 @@ export interface ReviewPurchaseData {
 
 interface Product {
   img: string
-  name: string
+  name?: string
 }
 
 //Category Discount Card (2nd Fold)
@@ -33,16 +33,23 @@ export interface CategoryDiscountData {
   id: string
   title: string
   products: Product[]
-  cta: string
+  cta?: string
 }
 
 //Keep Shopping Card (2nd Fold)
-export interface KeepShoppingData {
+export interface KeepShoppingProductData {
   id: string
   img: string
   name: string
   discount_price: number
   original_price: number
+}
+
+export interface KeepShoppingData {
+
+  id: string
+  cta: string
+  product: KeepShoppingProductData[]
 }
 
 //Product Detail Card (3rd Fold)
@@ -67,19 +74,13 @@ export interface GenericCard {
     | 'category-discount'
     | 'keep-shopping'
     | 'product-detail'
-    | 'fourth-fold'
+   
   data:
     | TodaysDealData
     | ReviewPurchaseData
     | CategoryDiscountData
-    | KeepShoppingData[]
+    | KeepShoppingData
     | ProductDetailData
-    | FourthFoldData
+    
 }
 
-export interface FourthFoldData {
-
-  id: string
-  product: KeepShoppingData[]
-  cta: string
-}
