@@ -114,7 +114,7 @@ const FourthFold: React.FC = () => {
     <section className={styles.SFWrapper}>
       <div className={styles.contentContainer}>
         {KEEP_SHOPPING_DETAILS.map((ele, idx) => (
-          <Card type='keep-shopping' data={ele.product} key={ele.id} />
+          <Card type='fourth-fold' data={ele.product} key={ele.id}  />
         ))}
       </div>
     </section>

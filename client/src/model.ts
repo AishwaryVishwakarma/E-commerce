@@ -67,14 +67,14 @@ export interface GenericCard {
     | 'category-discount'
     | 'keep-shopping'
     | 'product-detail'
-    // | 'fourth-fold'
+    | 'fourth-fold'
   data:
     | TodaysDealData
     | ReviewPurchaseData
     | CategoryDiscountData
     | KeepShoppingData[]
     | ProductDetailData
-    // | FourthFoldData[]
+    | FourthFoldData
 }
 
 export interface FourthFoldData {
