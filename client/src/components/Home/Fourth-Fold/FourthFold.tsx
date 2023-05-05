@@ -109,28 +109,24 @@ const KEEP_SHOPPING_DETAILS: KeepShoppingData[] = [
   }
 ]
 
-const DISCOUNT_CARD_DETAILS: CategoryDiscountData[] = [
-  {
-    id: nanoid(),
-    title: 'Pick Up where you left off',
-    products: [
-      {
-        img: 'https://m.media-amazon.com/images/I/61HHS0HrjpL._AC_UY327_FMwebp_QL65_.jpg',
-        
-      },
-      {
-        img: 'https://m.media-amazon.com/images/I/71ZDY57yTQL._AC_UY327_FMwebp_QL65_.jpg',
-        
-      },
-      {
-        img: 'https://m.media-amazon.com/images/I/41xHTtB5juL._SX300_SY300_QL70_FMwebp_.jpg',
-        
-      },
-      {
-        img: 'https://m.media-amazon.com/images/I/41WpkxwZ+WL._SY300_SX300_.jpg',
-      }
-    ],
-  },]
+const DISCOUNT_CARD_DETAILS: CategoryDiscountData = {
+  id: nanoid(),
+  title: 'Pick Up where you left off',
+  products: [
+    {
+      img: 'https://m.media-amazon.com/images/I/61HHS0HrjpL._AC_UY327_FMwebp_QL65_.jpg'
+    },
+    {
+      img: 'https://m.media-amazon.com/images/I/71ZDY57yTQL._AC_UY327_FMwebp_QL65_.jpg'
+    },
+    {
+      img: 'https://m.media-amazon.com/images/I/41xHTtB5juL._SX300_SY300_QL70_FMwebp_.jpg'
+    },
+    {
+      img: 'https://m.media-amazon.com/images/I/41WpkxwZ+WL._SY300_SX300_.jpg'
+    }
+  ]
+}
 
 const FourthFold: React.FC = () => {
   return (
@@ -139,7 +135,7 @@ const FourthFold: React.FC = () => {
         {KEEP_SHOPPING_DETAILS.map((ele, idx) => {
           return <Card type="keep-shopping" data={ele} key={ele.id} />
         })}
-        <Card type='category-discount' data={DISCOUNT_CARD_DETAILS[0]} />
+        <Card type="category-discount" data={DISCOUNT_CARD_DETAILS} />
       </div>
     </section>
   )

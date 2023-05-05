@@ -1,21 +1,20 @@
 import React from 'react'
 import styles from './styles.module.scss'
-import { KeepShoppingProductData, type KeepShoppingData } from '../../../../model'
+import {
+  KeepShoppingProductData,
+  type KeepShoppingData
+} from '../../../../model'
 
 interface Data {
-  data: KeepShoppingData 
+  data: KeepShoppingData
 }
 
-const KeepShoppingCard: React.FC<Data> = ({data}) => {
-
-  const [displayProduct, setDisplayProduct] = React.useState<KeepShoppingProductData>(
-    data.product[0]
-  )
+const KeepShoppingCard: React.FC<Data> = ({ data }) => {
+  const [displayProduct, setDisplayProduct] =
+    React.useState<KeepShoppingProductData>(data.product[0])
 
   const changeDisplayProduct = (id: string) => {
-    const filterProduct = data.product.filter(
-      (product) => id === product.id
-    )
+    const filterProduct = data.product.filter((product) => id === product.id)
     setDisplayProduct(filterProduct[0])
   }
 
