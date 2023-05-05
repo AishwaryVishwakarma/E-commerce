@@ -67,10 +67,19 @@ export interface GenericCard {
     | 'category-discount'
     | 'keep-shopping'
     | 'product-detail'
+    // | 'fourth-fold'
   data:
     | TodaysDealData
     | ReviewPurchaseData
     | CategoryDiscountData
     | KeepShoppingData[]
     | ProductDetailData
+    // | FourthFoldData[]
+}
+
+export interface FourthFoldData {
+
+  id: string
+  product: KeepShoppingData[]
+  cta: string
 }

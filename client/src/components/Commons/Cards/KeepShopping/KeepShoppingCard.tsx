@@ -22,7 +22,7 @@ const KeepShoppingCard: React.FC<Data> = ({data}) => {
 
   return (
     <div className={styles.KSWrapper}>
-      <p className={styles.title}>Keep shopping for</p>
+      <p className={styles.title}>Keep Shopping for</p>
       <div className={styles.productInfo}>
         <img src={displayProduct.img} alt="" />
         <p>{displayProduct.name}</p>
