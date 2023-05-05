@@ -7,7 +7,6 @@ interface Data {
 }
 
 const KeepShoppingCard: React.FC<Data> = ({data}) => {
-  console.log(data)
 
   const [displayProduct, setDisplayProduct] = React.useState<KeepShoppingData>(
     data[0]

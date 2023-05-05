@@ -39,7 +39,7 @@ const KEEP_SHOPPING_DETAILS: FourthFoldData[] = [
       }
     ]
   },
-{
+  {
     id: nanoid(),
     cta: 'Pick up where you left off',
     product: [
@@ -113,9 +113,9 @@ const FourthFold: React.FC = () => {
   return (
     <section className={styles.SFWrapper}>
       <div className={styles.contentContainer}>
-        {KEEP_SHOPPING_DETAILS.map((ele, idx) => (
-          <Card type='fourth-fold' data={ele.product} key={ele.id}  />
-        ))}
+        {KEEP_SHOPPING_DETAILS.map((ele, idx) => {
+          return <Card type="fourth-fold" data={ele} key={ele.id} />
+        })}
       </div>
     </section>
   )
