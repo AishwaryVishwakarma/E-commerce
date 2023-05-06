@@ -1,0 +1,11 @@
+.SFWrapper{
+    background: var(--secondary-blue);
+    width: 100%;
+    padding: 20px;
+  
+    .contentContainer{
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+    }
+  }
