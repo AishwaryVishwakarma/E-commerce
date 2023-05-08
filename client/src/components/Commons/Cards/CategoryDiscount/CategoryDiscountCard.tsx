@@ -2,19 +2,24 @@ import React from 'react'
 import styles from './styles.module.scss'
 import { type CategoryDiscountData } from '../../../../model'
 
-interface Data {
-  data: CategoryDiscountData
+interface Props {
+  cardData: CategoryDiscountData | any
 }
 
-const CategoryDiscountCard: React.FC<Data> = ({ data }) => {
-  const { title, products, cta } = data ?? {}
+const CategoryDiscountCard: React.FC<Props> = ({ cardData }) => {
+  const { title, products, cta } = cardData ?? {}
 
   return (
     <div className={styles.DCWrapper}>
       <p className={styles.title}>{title}</p>
       <div className={styles.productWrapper}>
-        {products.map((product, idx) => (
-          <div key={idx} className={ product.name ? styles.productInfo : styles.alternateProductInfo} >
+        {products.map((product: any, idx: number) => (
+          <div
+            key={idx}
+            className={
+              product.name ? styles.productInfo : styles.alternateProductInfo
+            }
+          >
             <img src={product.img} alt="" />
             <p>{product.name}</p>
           </div>

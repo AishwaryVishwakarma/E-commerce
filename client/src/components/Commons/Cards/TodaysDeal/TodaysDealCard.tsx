@@ -2,18 +2,18 @@ import React from 'react'
 import styles from './styles.module.scss'
 import { type TodaysDealData } from '../../../../model'
 
-interface Data {
-  data: TodaysDealData
+interface Props {
+  cardData: TodaysDealData | any
 }
 
-const TodaysDealCard: React.FC<Data> = ({ data }) => {
-  const { id, maxDiscount, fixedDiscount, timer, name, image } = data ?? {}
+const TodaysDealCard: React.FC<Props> = ({ cardData }) => {
+  const { id, maxDiscount, fixedDiscount, timer, name, image } = cardData ?? {}
 
   const [countdown, setCountdown] = React.useState(() => timer)
 
   React.useEffect(() => {
     const timerInterval = setInterval(() => {
-      setCountdown((state) => state && state - 1)
+      setCountdown((state: any) => state && state - 1)
     }, 1000)
 
     return () => clearTimeout(timerInterval)

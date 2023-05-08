@@ -10,17 +10,17 @@ const Card: React.FC<GenericCard> = ({ type, data }) => {
   const getCardType = (): JSX.Element => {
     switch (type) {
       case 'todays-deal':
-        return <TodaysDealCard data={data} />
+        return <TodaysDealCard cardData={data} />
       case 'review-purchase':
-        return <ReviewPurchaseCard data={data} />
+        return <ReviewPurchaseCard cardData={data} />
       case 'category-discount':
-        return <CategoryDiscountCard data={data} />
+        return <CategoryDiscountCard cardData={data} />
       case 'keep-shopping':
-        return <KeepShoppingCard data={data} />
+        return <KeepShoppingCard cardData={data} />
       case 'product-detail':
-        return <ProductDetailCard data={data} />
+        return <ProductDetailCard cardData={data} />
       default:
-        return <ProductDetailCard data={data} />
+        return <ProductDetailCard cardData={data} />
     }
   }
 

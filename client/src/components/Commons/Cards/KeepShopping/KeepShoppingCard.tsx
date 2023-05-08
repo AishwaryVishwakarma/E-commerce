@@ -1,26 +1,26 @@
 import React from 'react'
 import styles from './styles.module.scss'
-import {
-  KeepShoppingProductData,
-  type KeepShoppingData
-} from '../../../../model'
+import { type KeepShoppingData } from '../../../../model'
 
-interface Data {
-  data: KeepShoppingData
+interface Props {
+  cardData: KeepShoppingData | any
 }
 
-const KeepShoppingCard: React.FC<Data> = ({ data }) => {
-  const [displayProduct, setDisplayProduct] =
-    React.useState<KeepShoppingProductData>(data.product[0])
+const KeepShoppingCard: React.FC<Props> = ({ cardData }) => {
+  const [displayProduct, setDisplayProduct] = React.useState(
+    cardData.product[0]
+  )
 
   const changeDisplayProduct = (id: string) => {
-    const filterProduct = data.product.filter((product) => id === product.id)
+    const filterProduct = cardData.product.filter(
+      (product: any) => id === product.id
+    )
     setDisplayProduct(filterProduct[0])
   }
 
   return (
     <div className={styles.KSWrapper}>
-      <p className={styles.title}>{data.cta}</p>
+      <p className={styles.title}>{cardData.cta}</p>
       <div className={styles.productInfo}>
         <img src={displayProduct.img} alt="" />
         <p>{displayProduct.name}</p>
@@ -34,7 +34,7 @@ const KeepShoppingCard: React.FC<Data> = ({ data }) => {
         </div>
       </div>
       <div className={styles.imagesContainer}>
-        {data.product.map((product) => (
+        {cardData.product.map((product: any) => (
           <div
             key={product.id}
             className={`${styles.imageBox} ${

@@ -4,8 +4,8 @@ import { type Stars, type ProductDetailData } from '../../../../model'
 import { RiStarFill } from 'react-icons/ri'
 import { nanoid } from 'nanoid'
 
-interface Data {
-  data: ProductDetailData
+interface Props {
+  cardData: ProductDetailData | any
 }
 
 const STARS: Stars[] = [
@@ -26,7 +26,7 @@ const STARS: Stars[] = [
   }
 ]
 
-const ProductDetailCard: React.FC<Data> = ({ data }) => {
+const ProductDetailCard: React.FC<Props> = ({ cardData }) => {
   const {
     id,
     title,
@@ -38,7 +38,7 @@ const ProductDetailCard: React.FC<Data> = ({ data }) => {
     delivery_date,
     free_delivery,
     category
-  } = data ?? {}
+  } = cardData ?? {}
 
   return (
     <div className={styles.cardWrapper}>
