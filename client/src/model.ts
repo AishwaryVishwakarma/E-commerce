@@ -23,16 +23,14 @@ export interface ReviewPurchaseData {
   img: string
 }
 
-interface Product {
-  img: string
-  name?: string
-}
-
 //Category Discount Card (2nd Fold)
 export interface CategoryDiscountData {
   id: string
   title: string
-  products: Product[]
+  products: {
+    img: string
+    name?: string
+  }[]
   cta?: string
 }
 
@@ -82,12 +80,6 @@ export interface GenericCard {
 
 //Product Section
 export interface ProductSectionData {
-  type:
-    | 'review-purchase'
-    | 'category-discount'
-    | 'keep-shopping'
-  cardData:
-    | ReviewPurchaseData
-    | CategoryDiscountData
-    | KeepShoppingData
+  type: 'review-purchase' | 'category-discount' | 'keep-shopping'
+  cardData: ReviewPurchaseData | CategoryDiscountData | KeepShoppingData
 }
