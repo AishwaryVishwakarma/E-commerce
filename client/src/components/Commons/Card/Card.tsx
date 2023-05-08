@@ -20,7 +20,7 @@ const Card: React.FC<GenericCard> = ({ type, data }) => {
       case 'product-detail':
         return <ProductDetailCard cardData={data} />
       default:
-        return <ProductDetailCard cardData={data} />
+        return <div>Seems Empty!!</div>
     }
   }
 

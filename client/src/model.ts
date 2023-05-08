@@ -85,6 +85,17 @@ export interface GenericCard {
 
 //Product Section
 export interface ProductSectionData {
-  type: 'review-purchase' | 'category-discount' | 'keep-shopping'
-  cardData: ReviewPurchaseData | CategoryDiscountData | KeepShoppingData
+  type:
+    | 'todays-deal'
+    | 'review-purchase'
+    | 'category-discount'
+    | 'keep-shopping'
+    | 'product-detail'
+
+  cardData:
+    | TodaysDealData[]
+    | ReviewPurchaseData
+    | CategoryDiscountData
+    | KeepShoppingData
+    | ProductDetailData[]
 }
