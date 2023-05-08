@@ -31,13 +31,13 @@ const ProductSection: React.FC<Props> = ({ sectionData }) => {
           const { cardData } = data
           if (data.type === 'todays-deal') {
             return (
-              <div className={styles.TDWrapper}>
-                <div className={styles.TDMain}>
-                  <div className={styles.TDHeadingContainer}>
+              <div className={styles.ScrollableWrapper}>
+                <div className={styles.main}>
+                  <div className={styles.headingContainer}>
                     <p>Today's Deals</p>
                     <Link to="/">See all deals</Link>
                   </div>
-                  <div ref={cardsSectionRef} className={styles.TDCardsSection}>
+                  <div ref={cardsSectionRef} className={styles.scrollableCardsSection}>
                     {Array.isArray(cardData) &&
                       cardData.map((data: any) => (
                         <Card key={data.id} type="todays-deal" data={data} />
@@ -62,9 +62,9 @@ const ProductSection: React.FC<Props> = ({ sectionData }) => {
             )
           } else if (data.type === 'product-detail') {
             return (
-              <div className={styles.TFWrapper}>
-                <div className={styles.TFMain}>
-                  <div ref={cardsSectionRef} className={styles.TFCardsSection}>
+              <div className={styles.ScrollableWrapper}>
+                <div className={styles.main}>
+                  <div ref={cardsSectionRef} className={styles.scrollableCardsSection}>
                     {Array.isArray(cardData) &&
                       cardData.map((data) => (
                         <Card type="product-detail" key={data.id} data={data} />
