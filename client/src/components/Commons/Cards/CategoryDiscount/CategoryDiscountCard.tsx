@@ -1,12 +1,8 @@
 import React from 'react'
 import styles from './styles.module.scss'
-import { type CategoryDiscountData } from '../../../../model'
+import { type CardProp } from '../../../../model'
 
-interface Props {
-  cardData: CategoryDiscountData | any
-}
-
-const CategoryDiscountCard: React.FC<Props> = ({ cardData }) => {
+const CategoryDiscountCard: React.FC<CardProp> = ({ cardData }) => {
   const { title, products, cta } = cardData ?? {}
 
   return (

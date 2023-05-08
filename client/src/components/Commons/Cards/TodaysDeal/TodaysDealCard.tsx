@@ -1,12 +1,8 @@
 import React from 'react'
 import styles from './styles.module.scss'
-import { type TodaysDealData } from '../../../../model'
+import { type CardProp } from '../../../../model'
 
-interface Props {
-  cardData: TodaysDealData | any
-}
-
-const TodaysDealCard: React.FC<Props> = ({ cardData }) => {
+const TodaysDealCard: React.FC<CardProp> = ({ cardData }) => {
   const { id, maxDiscount, fixedDiscount, timer, name, image } = cardData ?? {}
 
   const [countdown, setCountdown] = React.useState(() => timer)

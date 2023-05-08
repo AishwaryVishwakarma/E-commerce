@@ -61,6 +61,11 @@ export interface ProductDetailData {
   free_delivery?: boolean
 }
 
+//Card Props
+export interface CardProp {
+  cardData: any
+}
+
 //Generic Card
 export interface GenericCard {
   type:

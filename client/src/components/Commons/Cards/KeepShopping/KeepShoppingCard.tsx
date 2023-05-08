@@ -1,12 +1,8 @@
 import React from 'react'
 import styles from './styles.module.scss'
-import { type KeepShoppingData } from '../../../../model'
+import { type CardProp } from '../../../../model'
 
-interface Props {
-  cardData: KeepShoppingData | any
-}
-
-const KeepShoppingCard: React.FC<Props> = ({ cardData }) => {
+const KeepShoppingCard: React.FC<CardProp> = ({ cardData }) => {
   const [displayProduct, setDisplayProduct] = React.useState(
     cardData.product[0]
   )

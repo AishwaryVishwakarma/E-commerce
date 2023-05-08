@@ -2,11 +2,7 @@ import React from 'react'
 import styles from './styles.module.scss'
 import { BsStar } from 'react-icons/bs'
 import { nanoid } from 'nanoid'
-import { ReviewPurchaseData, type Stars } from '../../../../model'
-
-interface Props {
-  cardData: ReviewPurchaseData | any
-}
+import { type CardProp, type Stars } from '../../../../model'
 
 const STARS: Stars[] = [
   {
@@ -26,7 +22,7 @@ const STARS: Stars[] = [
   }
 ]
 
-const ReviewPurchaseCard: React.FC<Props> = ({ cardData }) => {
+const ReviewPurchaseCard: React.FC<CardProp> = ({ cardData }) => {
   const { img } = cardData ?? {}
   return (
     <div className={styles.RCWrapper}>
