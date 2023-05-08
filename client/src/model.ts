@@ -74,10 +74,5 @@ export interface GenericCard {
     | 'keep-shopping'
     | 'product-detail'
 
-  data:
-    | TodaysDealData
-    | ReviewPurchaseData
-    | CategoryDiscountData
-    | KeepShoppingData
-    | ProductDetailData
+  data: any
 }
