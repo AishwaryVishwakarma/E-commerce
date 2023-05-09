@@ -1,20 +1,15 @@
 import React from 'react'
 import styles from './styles.module.scss'
-import { TDDummyData as DummyData } from '../../../../model'
+import { type CardProp } from '../../../../model'
 
-interface ProductData {
-  productData: DummyData
-}
-
-const TDCard: React.FC<ProductData> = ({ productData }) => {
-  const { id, maxDiscount, fixedDiscount, timer, name, image } =
-    productData ?? {}
+const TodaysDealCard: React.FC<CardProp> = ({ cardData }) => {
+  const { id, maxDiscount, fixedDiscount, timer, name, image } = cardData ?? {}
 
   const [countdown, setCountdown] = React.useState(() => timer)
 
   React.useEffect(() => {
     const timerInterval = setInterval(() => {
-      setCountdown((state) => state && state - 1)
+      setCountdown((state: any) => state && state - 1)
     }, 1000)
 
     return () => clearTimeout(timerInterval)
@@ -43,4 +38,4 @@ const TDCard: React.FC<ProductData> = ({ productData }) => {
   )
 }
 
-export default TDCard
+export default TodaysDealCard

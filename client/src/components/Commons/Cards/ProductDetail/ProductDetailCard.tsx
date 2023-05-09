@@ -1,12 +1,8 @@
 import React from 'react'
 import styles from './styles.module.scss'
-import { Stars, type TFDummyData } from './../../../../model'
+import { type Stars, type CardProp } from '../../../../model'
 import { RiStarFill } from 'react-icons/ri'
 import { nanoid } from 'nanoid'
-
-interface Data {
-  data: TFDummyData
-}
 
 const STARS: Stars[] = [
   {
@@ -26,7 +22,7 @@ const STARS: Stars[] = [
   }
 ]
 
-const TFCard: React.FC<Data> = ({ data }) => {
+const ProductDetailCard: React.FC<CardProp> = ({ cardData }) => {
   const {
     id,
     title,
@@ -38,7 +34,7 @@ const TFCard: React.FC<Data> = ({ data }) => {
     delivery_date,
     free_delivery,
     category
-  } = data ?? {}
+  } = cardData ?? {}
 
   return (
     <div className={styles.cardWrapper}>
@@ -81,4 +77,4 @@ const TFCard: React.FC<Data> = ({ data }) => {
   )
 }
 
-export default TFCard
+export default ProductDetailCard
