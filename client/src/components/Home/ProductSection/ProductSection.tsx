@@ -1,21 +1,26 @@
 import React from 'react'
 import styles from './styles.module.scss'
 import Card from '../../Commons/Card/Card'
-import { nanoid } from 'nanoid'
+import {nanoid} from 'nanoid'
 import {
+  TodaysDealData,
   type CategoryDiscountData,
   type KeepShoppingData,
   type ProductSectionData,
-  type ReviewPurchaseData
+  type ReviewPurchaseData,
+  ProductDetailData
 } from '../../../model'
-import { GrFormNext, GrFormPrevious } from 'react-icons/gr'
-import { Link } from 'react-router-dom'
+import {GrFormNext, GrFormPrevious} from 'react-icons/gr'
+import {Link} from 'react-router-dom'
+import {UtilityContext} from '../../../App'
 
 interface Props {
   sectionData: ProductSectionData[]
 }
 
-const ProductSection: React.FC<Props> = ({ sectionData }) => {
+const ProductSection: React.FC<Props> = ({sectionData}) => {
+  const {theme, setTheme, isMobile} = React.useContext(UtilityContext) ?? {}
+
   let cardsSectionRef = React.useRef<HTMLDivElement | null>(null)
 
   const scroll = (scrollOffset: number) => {
@@ -28,61 +33,39 @@ const ProductSection: React.FC<Props> = ({ sectionData }) => {
     <section className={styles.PSectionWrapper}>
       <div className={styles.contentContainer}>
         {sectionData.map((data) => {
-          const { cardData } = data
-          if (data.type === 'todays-deal') {
+          const {cardData} = data
+          if (sectionData.length === 1) {
             return (
-              <div className={styles.ScrollableWrapper}>
+              <div key={nanoid()} className={styles.ScrollableWrapper}>
                 <div className={styles.main}>
-                  <div className={styles.headingContainer}>
-                    <p>Today's Deals</p>
-                    <Link to="/">See all deals</Link>
-                  </div>
+                  {data.type === "todays-deal" && (
+                    <div className={styles.headingContainer}>
+                      <p>Today's Deals</p>
+                      <Link to="/">See all deals</Link>
+                    </div>
+                  )}
                   <div ref={cardsSectionRef} className={styles.scrollableCardsSection}>
                     {Array.isArray(cardData) &&
-                      cardData.map((data: any) => (
-                        <Card key={data.id} type="todays-deal" data={data} />
+                      cardData.map((singleCardData: TodaysDealData | ProductDetailData) => (
+                        <Card key={singleCardData.id} type={data.type} data={singleCardData} />
                       ))}
-                    <button
-                      type="button"
-                      className={styles.prevButton}
-                      onClick={() => scroll(-1400)}
-                    >
-                      <GrFormPrevious />
-                    </button>
-                    <button
-                      type="button"
-                      className={styles.nextButton}
-                      onClick={() => scroll(1400)}
-                    >
-                      <GrFormNext />
-                    </button>
-                  </div>
-                </div>
-              </div>
-            )
-          } else if (data.type === 'product-detail') {
-            return (
-              <div className={styles.ScrollableWrapper}>
-                <div className={styles.main}>
-                  <div ref={cardsSectionRef} className={styles.scrollableCardsSection}>
-                    {Array.isArray(cardData) &&
-                      cardData.map((data) => (
-                        <Card type="product-detail" key={data.id} data={data} />
-                      ))}
-                    <button
-                      type="button"
-                      className={styles.prevButton}
-                      onClick={() => scroll(-1400)}
-                    >
-                      <GrFormPrevious />
-                    </button>
-                    <button
-                      type="button"
-                      className={styles.nextButton}
-                      onClick={() => scroll(1400)}
-                    >
-                      <GrFormNext />
-                    </button>
+                    {!isMobile &&
+                      <>
+                        <button
+                          type="button"
+                          className={styles.prevButton}
+                          onClick={() => scroll(-1400)}
+                        >
+                          <GrFormPrevious />
+                        </button>
+                        <button
+                          type="button"
+                          className={styles.nextButton}
+                          onClick={() => scroll(1400)}
+                        >
+                          <GrFormNext />
+                        </button>
+                      </>}
                   </div>
                 </div>
               </div>
@@ -94,9 +77,9 @@ const ProductSection: React.FC<Props> = ({ sectionData }) => {
               type={data.type}
               data={
                 data.cardData as
-                  | ReviewPurchaseData
-                  | CategoryDiscountData
-                  | KeepShoppingData
+                | ReviewPurchaseData
+                | CategoryDiscountData
+                | KeepShoppingData
               }
             />
           )

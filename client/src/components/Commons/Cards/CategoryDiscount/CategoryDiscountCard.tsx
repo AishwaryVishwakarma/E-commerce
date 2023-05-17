@@ -6,7 +6,7 @@ const CategoryDiscountCard: React.FC<CardProp> = ({ cardData }) => {
   const { title, products, cta } = cardData ?? {}
 
   return (
-    <div className={styles.DCWrapper}>
+    <div className={styles.CDWrapper}>
       <p className={styles.title}>{title}</p>
       <div className={styles.productWrapper}>
         {products.map((product: any, idx: number) => (
