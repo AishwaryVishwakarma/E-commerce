@@ -6,6 +6,13 @@
   background: url('https://i.postimg.cc/qq1spgjN/Slice-1.png') no-repeat;
   background-size: cover;
 
+  @media (max-width: '800px') {
+    flex-direction: column;
+    padding: 80px 30px;
+    align-items: center;
+    gap: 40px;
+  }
+
   .heroHeadingContainer {
     max-width: 650px;
 
@@ -15,6 +22,11 @@
       font-size: 50px;
       font-weight: 600;
       letter-spacing: 1px;
+
+      @media (max-width: '800px') {
+        font-size: 24px;
+        text-align: center;
+      }
 
       & > span {
         font-family: Dancing Script;
@@ -33,12 +45,20 @@
       border-radius: 5px;
       margin-top: 20px;
       cursor: pointer;
+
+      @media (max-width: '800px') {
+        display: none;
+      }
     }
   }
 
   .heroImageContainer {
     width: 650px;
     height: auto;
+
+    @media (max-width: '800px') {
+      width: 100%;
+    }
 
     & > img {
       height: 100%;

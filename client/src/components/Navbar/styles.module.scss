@@ -9,12 +9,115 @@
   z-index: 1;
   flex-wrap: wrap;
 
+  @media (max-width: '800px') {
+    padding: 15px 30px;
+  }
+
   .navHeading {
     font-family: 'Lato';
     font-size: 30px;
     font-weight: 700;
     letter-spacing: 1px;
     cursor: pointer;
+
+    @media (max-width: '800px') {
+      font-size: 24px;
+    }
+  }
+
+  .hamButton {
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease-in-out;
+
+    .hamLine {
+      height: 3px;
+      background: white;
+      width: 25px;
+      margin-bottom: 5px;
+      transform-origin: center;
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+
+  .closeState {
+    .hamLine:first-child {
+      animation-name: rotate-clockwise;
+      animation-duration: 0.2s;
+      animation-timing-function: ease-in-out;
+      animation-fill-mode: forwards;
+
+      @keyframes rotate-clockwise {
+        100% {
+          transform: rotate(45deg) translateX(5.5px);
+        }
+      }
+    }
+
+    .hamLine:nth-child(2) {
+      display: none;
+    }
+
+    .hamLine:last-child {
+      animation-name: rotate-anti-clockwise;
+      animation-duration: 0.2s;
+      animation-timing-function: ease-in-out;
+      animation-fill-mode: forwards;
+
+      @keyframes rotate-anti-clockwise {
+        100% {
+          transform: rotate(-45deg) translateX(5.5px);
+        }
+      }
+    }
+  }
+
+  .openState {
+    .hamLine:first-child {
+      animation-name: rotate-back-anti-clockwise;
+      animation-duration: 0.2s;
+      animation-timing-function: ease-in-out;
+      animation-fill-mode: forwards;
+
+      @keyframes rotate-back-anti-clockwise {
+        0% {
+          transform: rotate(45deg) translateX(5px);
+        }
+      }
+    }
+
+    .hamLine:nth-child(2) {
+      display: block;
+    }
+
+    .hamLine:last-child {
+      animation-name: rotate-back-clockwise;
+      animation-duration: 0.2s;
+      animation-timing-function: ease-in-out;
+      animation-fill-mode: forwards;
+
+      @keyframes rotate-back-clockwise {
+        0% {
+          transform: rotate(-45deg) translateX(5px);
+        }
+      }
+    }
+  }
+
+  .hamMenu {
+    position: fixed;
+    background-color: #fff;
+    height: 100vh;
+    left: 0;
+    padding: 30px;
+    top: 59px;
+    width: 100%;
+    overflow: scroll;
+    overscroll-behavior: contain;
   }
 
   .navItems {
@@ -25,12 +128,25 @@
     cursor: pointer;
     gap: 10px;
 
-    & > li {
+    @media (max-width: '800px') {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+    }
+
+    & > li > a {
       font-family: Lato;
       font-size: 18px;
       padding: 10px;
       text-align: center;
       font-weight: 400;
+      text-decoration: none;
+      color: #ffffff;
+
+      @media (max-width: '800px') {
+        color: var(--almost-black);
+        font-size: 17.5px;
+      }
 
       &:hover {
         color: var(--primary-blue);
