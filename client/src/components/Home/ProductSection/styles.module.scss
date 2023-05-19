@@ -1,9 +1,9 @@
 .PSectionWrapper {
-  background: var(--secondary-blue);
   padding: 20px;
 
   @media (max-width: '800px') {
     overflow-x: scroll;
+    padding: 20px 0;
 
     &::-webkit-scrollbar {
       display: none;
