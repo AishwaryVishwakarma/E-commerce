@@ -1,75 +1,87 @@
-import React from 'react'
-import styles from './styles.module.scss'
-import Card from '../../Commons/Card/Card'
-import {nanoid} from 'nanoid'
+import React from 'react';
+import styles from './styles.module.scss';
+import Card from '../../Commons/Card/Card';
+import {nanoid} from 'nanoid';
 import {
-  TodaysDealData,
+  type TodaysDealData,
   type CategoryDiscountData,
   type KeepShoppingData,
   type ProductSectionData,
   type ReviewPurchaseData,
-  ProductDetailData
-} from '../../../model'
-import {GrFormNext, GrFormPrevious} from 'react-icons/gr'
-import {Link} from 'react-router-dom'
-import {UtilityContext} from '../../../App'
+  type ProductDetailData,
+} from '../../../model';
+import {GrFormNext, GrFormPrevious} from 'react-icons/gr';
+import {Link} from 'react-router-dom';
+import {UtilityContext} from '../../../App';
 
 interface Props {
-  sectionData: ProductSectionData[]
+  sectionData: ProductSectionData[];
 }
 
 const ProductSection: React.FC<Props> = ({sectionData}) => {
-  const {theme, setTheme, isMobile} = React.useContext(UtilityContext) ?? {}
+  const {isMobile} = React.useContext(UtilityContext) ?? {};
 
-  let cardsSectionRef = React.useRef<HTMLDivElement | null>(null)
+  let cardsSectionRef = React.useRef<HTMLDivElement | null>(null);
 
-  const scroll = (scrollOffset: number) => {
+  const scroll = (scrollOffset: number): void => {
     if (cardsSectionRef.current) {
-      cardsSectionRef.current.scrollLeft += scrollOffset
+      cardsSectionRef.current.scrollLeft += scrollOffset;
     }
-  }
+  };
 
   return (
     <section className={styles.PSectionWrapper}>
       <div className={styles.contentContainer}>
-        {sectionData.map((data) => {
-          const {cardData} = data
+        {sectionData?.map((data) => {
           if (sectionData.length === 1) {
+            const {cardData} = data;
             return (
               <div key={nanoid()} className={styles.ScrollableWrapper}>
                 <div className={styles.main}>
-                  {data.type === "todays-deal" && (
+                  {data.type === 'todays-deal' && (
                     <div className={styles.headingContainer}>
                       <p>Today's Deals</p>
-                      <Link to="/">See all deals</Link>
+                      <Link to='/'>See all deals</Link>
                     </div>
                   )}
-                  <div ref={cardsSectionRef} className={styles.scrollableCardsSection}>
+                  <div
+                    ref={cardsSectionRef}
+                    className={styles.scrollableCardsSection}
+                  >
                     {Array.isArray(cardData) &&
-                      cardData.map((singleCardData: TodaysDealData | ProductDetailData) => (
-                        <Card key={singleCardData.id} type={data.type} data={singleCardData} />
-                      ))}
-                    {!isMobile &&
+                      cardData.map(
+                        (
+                          singleCardData: TodaysDealData | ProductDetailData
+                        ): React.ReactNode => (
+                          <Card
+                            key={singleCardData.id}
+                            type={data.type}
+                            data={singleCardData}
+                          />
+                        )
+                      )}
+                    {!isMobile && (
                       <>
                         <button
-                          type="button"
+                          type='button'
                           className={styles.prevButton}
-                          onClick={() => scroll(-1400)}
+                          onClick={(): void => scroll(-1400)}
                         >
                           <GrFormPrevious />
                         </button>
                         <button
-                          type="button"
+                          type='button'
                           className={styles.nextButton}
-                          onClick={() => scroll(1400)}
+                          onClick={(): void => scroll(1400)}
                         >
                           <GrFormNext />
                         </button>
-                      </>}
+                      </>
+                    )}
                   </div>
                 </div>
               </div>
-            )
+            );
           }
           return (
             <Card
@@ -77,16 +89,16 @@ const ProductSection: React.FC<Props> = ({sectionData}) => {
               type={data.type}
               data={
                 data.cardData as
-                | ReviewPurchaseData
-                | CategoryDiscountData
-                | KeepShoppingData
+                  | ReviewPurchaseData
+                  | CategoryDiscountData
+                  | KeepShoppingData
               }
             />
-          )
+          );
         })}
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default ProductSection
+export default ProductSection;

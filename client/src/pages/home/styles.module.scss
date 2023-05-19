@@ -1,0 +1,7 @@
+.homeContentWrapper {
+  background-color: var(--secondary-blue);
+
+  @media (max-width: '800px') {
+    padding: 0 20px;
+  }
+}

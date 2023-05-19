@@ -1,8 +1,12 @@
 import React from 'react'
 import styles from './styles.module.scss'
-import { type Stars, type CardProp } from '../../../../model'
-import { RiStarFill } from 'react-icons/ri'
-import { nanoid } from 'nanoid'
+import {type Stars, type ProductDetailData} from '../../../../model'
+import {RiStarFill} from 'react-icons/ri'
+import {nanoid} from 'nanoid'
+
+interface CardProp {
+  cardData: ProductDetailData
+}
 
 const STARS: Stars[] = [
   {
@@ -22,7 +26,7 @@ const STARS: Stars[] = [
   }
 ]
 
-const ProductDetailCard: React.FC<CardProp> = ({ cardData }) => {
+const ProductDetailCard: React.FC<CardProp> = ({cardData}) => {
   const {
     id,
     title,
