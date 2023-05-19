@@ -1,19 +1,23 @@
-import React from 'react'
-import styles from './styles.module.scss'
-import { type CardProp } from '../../../../model'
+import React from 'react';
+import styles from './styles.module.scss';
+import {type TodaysDealData} from '../../../../model';
 
-const TodaysDealCard: React.FC<CardProp> = ({ cardData }) => {
-  const { id, maxDiscount, fixedDiscount, timer, name, image } = cardData ?? {}
+interface CardProp {
+  cardData: TodaysDealData;
+}
 
-  const [countdown, setCountdown] = React.useState(() => timer)
+const TodaysDealCard: React.FC<CardProp> = ({cardData}) => {
+  const {id, maxDiscount, fixedDiscount, timer, name, image} = cardData ?? {};
+
+  const [countdown, setCountdown] = React.useState(() => timer);
 
   React.useEffect(() => {
     const timerInterval = setInterval(() => {
-      setCountdown((state: any) => state && state - 1)
-    }, 1000)
+      setCountdown((state: any) => state && state - 1);
+    }, 1000);
 
-    return () => clearTimeout(timerInterval)
-  }, [])
+    return () => clearTimeout(timerInterval);
+  }, []);
 
   return (
     <div className={styles.cardWrapper}>
@@ -35,7 +39,7 @@ const TodaysDealCard: React.FC<CardProp> = ({ cardData }) => {
       </div>
       <div className={styles.productName}>{name}</div>
     </div>
-  )
-}
+  );
+};
 
-export default TodaysDealCard
+export default TodaysDealCard;
